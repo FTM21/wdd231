@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gidole&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
@@ -19,6 +18,11 @@
     <header>
         <img src="images/FTBYU.jpg" alt="Photo of Francisca Maxinho">
         <span>Francisca Maxinho</span>
+        <section id="about-me">
+            <h2>About Me</h2>
+            <p>I am a web development student passionate about creating user-friendly websites. I'm currently focusing on learning frontend technologies like HTML, CSS, and JavaScript.</p>
+            <p>I am from Portugal and enjoy exploring new technologies and design trends. My goal is to become a skilled frontend developer who can create beautiful, responsive, and accessible websites.</p>
+        </section>
     </header>
     <nav>
         <button id="hamburger-btn">&#9776;</button>
@@ -45,14 +49,40 @@
                 <button id="cse-btn">CSE Courses</button>
             </div>
             <div id="course-cards">
-                <!-- Course cards will be dynamically inserted here by JavaScript -->
             </div>
             <p id="credit-total">Total Credits: <span id="credits">0</span></p>
         </section>
-        <section id="about-section">
-            <h2>About Me</h2>
-            <p>I am a web development student passionate about creating user-friendly websites. I'm currently focusing on learning frontend technologies like HTML, CSS, and JavaScript.</p>
-            <p>I am from Portugal and enjoy exploring new technologies and design trends. My goal is to become a skilled frontend developer who can create beautiful, responsive, and accessible websites.</p>
+
+        <section id="work-section">
+            <h2>My Work</h2>
+            <div class="card">
+                <h3>Project 1</h3>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="card">
+                <h3>Project 2</h3>
+                <p>Description of Project 2.</p>
+            </div>
+        </section>
+
+        <section id="lisbon-section">
+            <h2>Lisbon</h2>
+            <div class="card">
+                <h3>Favorite Places</h3>
+                <p>Details about Lisbon's attractions.</p>
+            </div>
+            <div class="card">
+                <h3>Culture & Food</h3>
+                <p>Details about local cuisine and culture.</p>
+            </div>
+        </section>
+
+        <section id="certificate-section">
+            <h2>WDD 231 Web & Programming Certificate</h2>
+            <div class="card">
+                <h3>Course Completion</h3>
+                <p>Details about the course's content and skills learned.</p>
+            </div>
         </section>
     </main>
     <footer>
@@ -60,4 +90,3 @@
         <p id="lastModified"></p>
     </footer>
 </body>
-</html>
