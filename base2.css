@@ -1,0 +1,160 @@
+/* base.css */
+
+:root {
+  --primary-color: mediumturquoise;
+  --secondary-color: #c0d6df;
+  --accent-color: #0b7b72;
+  --light-color: #d4e4e2;
+  --dark-color: black;
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Reset some default styles for consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #d4e4e2;
+  color: black;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: mediumturquoise;
+}
+
+header img {
+  max-height: 3px;
+  margin-right: 0.7rem;
+}
+
+header span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: turquoise;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #c0d6df;
+  position: absolute;
+}
+
+/* Hamburger button styles */
+#hamburger-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Main navigation list */
+#main-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#main-nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#main-nav li a:hover,
+#main-nav li a.active {
+  background-color: mediumturquoise;
+  color: white;
+}
+
+/* Main content styles */
+main {
+  padding: 2rem;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: mediumturquoise;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #0b7b72;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card styles in Course Work */
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+}
+
+/* Buttons styles (filter buttons and course buttons) */
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: mediumturquoise;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+button.active {
+  background-color: #0b7b72;
+}
+
+/* Container for course cards */
+#course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Footer styles */
+footer {
+  background-color: #c0d6df;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: black;
+}
