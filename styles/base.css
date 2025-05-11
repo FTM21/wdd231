@@ -27,30 +27,30 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var('Roboto', sans-serif);
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: var(--light-color);
+    color: var(black);
+    background-color: var(#d4e4e2);
     max-width: 100vw;
     overflow-x: hidden;
     padding: 0 var(--spacing);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var('Anton', sans-serif);
     margin-bottom: var(--spacing);
     line-height: 1.2;
-    color: var(--accent-color);
+    color: var(#0b7b72);
 }
 
 a {
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(#0b7b72);
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--primary-color);
+    color: var(mediumturquoise);
 }
 
 img {
@@ -65,7 +65,7 @@ ul {
 
 /* Header Styles */
 header {
-    background-color: var(--primary-color);
+    background-color: var(mediumturquoise);
     padding: var(--spacing);
     display: flex;
     align-items: center;
@@ -81,15 +81,15 @@ header img {
 }
 
 header span {
-    font-family: var(--font-heading);
+    font-family: var('Anton', sans-serif);
     font-size: 1.5rem;
-    color: var(--dark-color);
+    color: var(black);
     font-weight: bold;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: var(--secondary-color);
+    background-color: var(#c0d6df);
     padding: 0;
 }
 
@@ -97,7 +97,7 @@ nav {
     display: block;
     width: 100%;
     padding: var(--spacing);
-    background-color: var(--secondary-color);
+    background-color: var(#c0d6df);
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
@@ -122,27 +122,27 @@ nav {
     display: block;
     padding: var(--spacing);
     text-align: center;
-    color: var(--dark-color);
+    color: var(black);
     font-weight: 500;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #main-nav a:hover, 
 #main-nav a.active {
-    background-color: var(--accent-color);
+    background-color: var(#0b7b72);
     color: white;
 }
 
 /* Main Content */
 main {
-    padding: var(--spacing) 0;
-    max-width: var(--max-width);
+    padding: var(1) 0;
+    max-width: var(1200px);
     margin: 0 auto;
 }
 
 h1 {
     text-align: center;
-    color: var(--accent-color);
+    color: var(#0b7b72);
     margin: var(--spacing) 0;
     font-size: 2rem;
 }
@@ -165,7 +165,7 @@ section {
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    margin: var(--spacing) 0;
+    margin: var(1) 0;
 }
 
 /* Course Section */
@@ -176,32 +176,32 @@ section {
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing);
-    margin-bottom: var(--spacing);
+    gap: var(0.7rem);
+    margin-bottom: var(1);
     justify-content: center;
 }
 
 .filter-buttons button {
-    background-color: var(--secondary-color);
+    background-color: var(#c0d6df);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-    font-family: var(--font-heading);
+    font-family: var('Anton', sans-serif);
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .filter-buttons button:hover,
 .filter-buttons button.active {
-    background-color: var(--accent-color);
+    background-color: var(#0b7b72);
     color: white;
 }
 
 #credit-total {
     text-align: center;
     margin: var(--spacing) 0;
-    font-family: var(--font-heading);
+    font-family: var('Anton', sans-serif);
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -230,14 +230,14 @@ section {
 }
 
 .course-card h3 {
-    margin-bottom: calc(var(--spacing) / 2);
-    color: var(--dark-color);
+    margin-bottom: calc(var(1) / 2);
+    color: var(black);
 }
 
 .course-code {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    background-color: var(--uncompleted-bg);
+    background-color: var(red);
     color: white;
     border-radius: 4px;
     font-size: 0.875rem;
@@ -245,7 +245,7 @@ section {
 }
 
 .completed .course-code {
-    background-color: var(--completed-bg);
+    background-color: var(green);
 }
 
 .course-info {
@@ -274,11 +274,11 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(mediumturquoise);
     color: var(--dark-color);
-    padding: calc(var(--spacing) * 2) 0;
+    padding: calc(var(0.4rem) * 2) 0;
     text-align: center;
-    margin-top: var(--spacing);
+    margin-top: var(0.6rem);
 }
 
 footer p {
@@ -308,11 +308,11 @@ footer p {
     #course-cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing);
+        gap: var(0,3);
     }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 640px) {
     #course-cards {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -322,7 +322,7 @@ footer p {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 640px) {
     body {
         padding: 0;
     }
