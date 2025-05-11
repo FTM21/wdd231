@@ -113,7 +113,7 @@ html {
   [type="button"]:-moz-focusring,
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+    outline: 1px dotted forestgreen;
   }
   
   fieldset {
@@ -143,8 +143,8 @@ html {
     padding: 0;
   }
   
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
+  [type="1"]::-webkit-inner-spin-button,
+  [type="1"]::-webkit-outer-spin-button {
     height: auto;
   }
   
