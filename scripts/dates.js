@@ -1,11 +1,15 @@
-// Update copyright year and last modified date
+// Set the current year for the copyright statement and the last modified date
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the current year
-    const currentYear = new Date().getFullYear();
+    // Set current year in copyright statement
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        const currentYear = new Date().getFullYear();
+        currentYearElement.textContent = currentYear;
+    }
     
-    // Update the copyright year
-    document.getElementById('currentYear').textContent = currentYear;
-    
-    // Update the last modified date
-    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+    // Set last modified date
+    const lastModifiedElement = document.getElementById('lastModified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
+    }
 });

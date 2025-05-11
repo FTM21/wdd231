@@ -1,132 +1,136 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Course data - modified from the provided array
-    const courses = [
-        {
-            code: "CSE 121b",
-            name: "JavaScript Language",
-            credits: 3,
-            completed: true, // Change to true if you've completed this course
-            courseType: "CSE"
-        },
-        {
-            code: "CSE 111",
-            name: "Programming with Functions",
-            credits: 3,
-            completed: true, // Change to true if you've completed this course
-            courseType: "CSE"
-        },
-        {
-            code: "WDD 130",
-            name: "Web Fundamentals",
-            credits: 3,
-            completed: true, // Change to true if you've completed this course
-            courseType: "WDD"
-        },
-        {
-            code: "WDD 230",
-            name: "Web Frontend Development I",
-            credits: 3,
-            completed: true, // Change to true if you've completed this course
-            courseType: "WDD"
-        },
-        {
-            code: "WDD 231",
-            name: "Web Frontend Development II",
-            credits: 3,
-            completed: false, // Currently taking this course
-            courseType: "WDD"
-        },
-        {
-            code: "CSE 210",
-            name: "Programming with Classes",
-            credits: 3,
-            completed: false, // Change to true if you've completed this course
-            courseType: "CSE"
-        },
-        {
-            code: "CSE 212",
-            name: "Data Structures",
-            credits: 3,
-            completed: false, // Change to true if you've completed this course
-            courseType: "CSE"
-        },
-        {
-            code: "WDD 330",
-            name: "Web Frontend Development III",
-            credits: 3,
-            completed: false, // Change to true if you've completed this course
-            courseType: "WDD"
-        },
-        {
-            code: "WDD 430",
-            name: "Web Full-Stack Development",
-            credits: 3,
-            completed: false, // Change to true if you've completed this course
-            courseType: "WDD"
-        }
-    ];
+// Course List Array
+const courses = [
+    {
+        name: "Web Fundamentals",
+        code: "WDD 130",
+        credits: 3,
+        category: "WDD",
+        completed: true   // Change to true if you have completed this course
+    },
+    {
+        name: "JavaScript Programming",
+        code: "WDD 230",
+        credits: 3,
+        category: "WDD",
+        completed: true   // Change to true if you have completed this course
+    },
+    {
+        name: "Web Frontend Development I",
+        code: "WDD 330",
+        credits: 3,
+        category: "WDD",
+        completed: false  // Change to true if you have completed this course
+    },
+    {
+        name: "Web Backend Development I",
+        code: "WDD 430",
+        credits: 3,
+        category: "WDD",
+        completed: false  // Change to true if you have completed this course
+    },
+    {
+        name: "Programming Building Blocks",
+        code: "CSE 110",
+        credits: 3,
+        category: "CSE",
+        completed: true   // Change to true if you have completed this course
+    },
+    {
+        name: "Programming with Functions",
+        code: "CSE 111",
+        credits: 3,
+        category: "CSE",
+        completed: true   // Change to true if you have completed this course
+    },
+    {
+        name: "Programming with Classes",
+        code: "CSE 121b",
+        credits: 3,
+        category: "CSE",
+        completed: false  // Change to true if you have completed this course
+    },
+    {
+        name: "Applied Programming",
+        code: "CSE 210",
+        credits: 3,
+        category: "CSE",
+        completed: false  // Change to true if you have completed this course
+    }
+];
 
-    // Get DOM elements
-    const courseCards = document.getElementById('course-cards');
-    const creditTotal = document.getElementById('credits');
+// Initialize Course Display and Filtering
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const courseCardsContainer = document.getElementById('course-cards');
     const allBtn = document.getElementById('all-btn');
     const wddBtn = document.getElementById('wdd-btn');
     const cseBtn = document.getElementById('cse-btn');
-
-    // Function to display courses
+    const creditSpan = document.getElementById('credits');
+    
+    if (!courseCardsContainer) return;
+    
+    // Initial display of all courses
+    displayCourses(courses);
+    
+    // Add event listeners to filter buttons
+    if (allBtn) {
+        allBtn.addEventListener('click', function() {
+            setActiveButton(this);
+            displayCourses(courses);
+        });
+    }
+    
+    if (wddBtn) {
+        wddBtn.addEventListener('click', function() {
+            setActiveButton(this);
+            const wddCourses = courses.filter(course => course.category === "WDD");
+            displayCourses(wddCourses);
+        });
+    }
+    
+    if (cseBtn) {
+        cseBtn.addEventListener('click', function() {
+            setActiveButton(this);
+            const cseCourses = courses.filter(course => course.category === "CSE");
+            displayCourses(cseCourses);
+        });
+    }
+    
+    // Helper function to set active button
+    function setActiveButton(activeButton) {
+        const buttons = document.querySelectorAll('.filter-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        activeButton.classList.add('active');
+    }
+    
+    // Function to display courses and calculate total credits
     function displayCourses(coursesToDisplay) {
-        // Clear previous content
-        courseCards.innerHTML = '';
+        // Clear the course container
+        courseCardsContainer.innerHTML = '';
         
-        // Calculate total credits
-        const totalCredits = coursesToDisplay.reduce((sum, course) => sum + course.credits, 0);
-        creditTotal.textContent = totalCredits;
-        
-        // Create course cards
+        // Display each course
         coursesToDisplay.forEach(course => {
-            const card = document.createElement('div');
-            card.className = `course-card ${course.completed ? 'completed' : 'uncompleted'}`;
+            const courseElement = document.createElement('div');
+            courseElement.className = `course-card ${course.completed ? 'completed' : 'uncompleted'}`;
             
-            card.innerHTML = `
-                <h3>${course.code}</h3>
-                <p>${course.name}</p>
-                <div class="course-info">
-                    <span>${course.credits} Credits</span>
-                    <span>${course.completed ? 'Completed' : 'Not Completed'}</span>
+            courseElement.innerHTML = `
+                <div class="card-content">
+                    <span class="course-code">${course.code}</span>
+                    <h3>${course.name}</h3>
+                    <div class="course-info">
+                        <span class="course-credits">${course.credits} Credits</span>
+                        <span class="course-status">${course.completed ? 'Completed' : 'Not Completed'}</span>
+                    </div>
                 </div>
             `;
             
-            courseCards.appendChild(card);
+            courseCardsContainer.appendChild(courseElement);
         });
-    }
-
-    // Display all courses initially
-    displayCourses(courses);
-
-    // Event listeners for filter buttons
-    allBtn.addEventListener('click', function() {
-        setActiveButton(this);
-        displayCourses(courses);
-    });
-
-    wddBtn.addEventListener('click', function() {
-        setActiveButton(this);
-        const wddCourses = courses.filter(course => course.courseType === 'WDD');
-        displayCourses(wddCourses);
-    });
-
-    cseBtn.addEventListener('click', function() {
-        setActiveButton(this);
-        const cseCourses = courses.filter(course => course.courseType === 'CSE');
-        displayCourses(cseCourses);
-    });
-
-    // Helper function to set active button
-    function setActiveButton(activeButton) {
-        // Remove active class from all buttons
-        [allBtn, wddBtn, cseBtn].forEach(btn => btn.classList.remove('active'));
         
-        // Add active class to clicked button
-        activeButton.classList.add('active');
+        // Calculate and display total credits using reduce method
+        if (creditSpan) {
+            const totalCredits = coursesToDisplay.reduce((total, course) => total + course.credits, 0);
+            creditSpan.textContent = totalCredits;
+        }
     }
 });
