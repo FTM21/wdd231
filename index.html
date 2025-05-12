@@ -11,15 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gidole&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base2.css">
     <script src="scripts/dynamic.js" defer></script>
-
 </head>
-<header>
-    <div class="header-content">
-        <img src="images/ft.jpg" alt="Photo of Francisca Maxinho" class="header-img">
-        <span class="header-name">Francisca Maxinho</span>
-    </div>
-</header>
 <body>
+    <!-- Moved header inside body for valid structure -->
+    <header>
+        <div class="header-content">
+            <img src="images/ft.jpg" alt="Photo of Francisca Maxinho" class="header-img">
+            <span class="header-name">Francisca Maxinho</span>
+        </div>
+    </header>
+
     <nav>
         <button id="hamburger-btn">&#9776;</button>
         <ul id="main-nav">
@@ -32,29 +33,32 @@
     </nav>
     <main>
         <h1>Home</h1>
-    <!-- Course Work - Section 01--> 
 
-       <section id="work-section">
-        <h2>Course Work</h2>
-        <div class="card">
-            <h3>*</h3>
-            <h3>*</h3>
-            <h3>*</h3>
-        </div>
-<!-- Lisbon- Section 02--> 
-    </section>
+        <!-- Course Work - Section 01--> 
+        <section id="work-section">
+            <h2>Course Work</h2>
+            <div class="card">
+                <h3>*</h3>
+                <h3>*</h3>
+                <h3>*</h3>
+            </div>
+        </section>
+
+        <!-- Lisbon- Section 02--> 
         <section id="Lisbon-section">
             <h2>Lisbon, Portugal</h2>
-            <img src="images/Lisbon.jpg" alt="Lisbon, Portugal cityscape">
-            <p> Colorful City</p>
+            <img src="images/lisbon.jpg" alt="Lisbon, Portugal cityscape">
+            <p>Colorful City</p>
         </section>
-<!-- Course- Section 03--> 
+
+        <!-- Course- Section 03--> 
         <section id="course-section">
             <h2>Web and computer programming Certificate</h2>
             <div class="filter-buttons">
                 <button id="all-btn" class="active">All</button>
                 <button id="cse-btn">CSE</button>
                 <button id="wdd-btn">WDD</button>
+            </div> <!-- closed filter-buttons div -->
             <div id="course-cards"> 
                 <button id="cse110-btn">CSE 110</button>
                 <button id="wdd130-btn">WDD 130</button>
@@ -63,9 +67,12 @@
                 <button id="wdd131-btn">WDD 131</button>
                 <button id="wdd231-btn">WDD231</button>
             </div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentYear"></span> | Francisca Maxinho | lisbon, Portugal</p>
+        <p>&copy; <span id="currentYear"></span> | Francisca Maxinho | Lisbon, Portugal</p>
         <p id="lastModified"></p>
     </footer>
 </body>
+</html>
