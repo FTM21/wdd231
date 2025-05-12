@@ -1,6 +1,5 @@
-// scripts.js
 
-// Wait for the DOM to fully load
+
 document.addEventListener('DOMContentLoaded', () => {
   
     // === Course Details Display ===
@@ -41,6 +40,34 @@ document.addEventListener('DOMContentLoaded', () => {
       lastModifiedElem.textContent = 'Last Modified: ' + document.lastModified;
     }
   
+// Example: dynamically update the header content
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+
+  // Create the container
+  const headerContent = document.createElement('div');
+  headerContent.className = 'header-content';
+
+  // Create the image element
+  const img = document.createElement('img');
+  img.src = 'images/FTBYU.jpg';
+  img.alt = 'Photo of Francisca Maxinho';
+  img.className = 'header-img';
+
+  // Create the span for the name
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'header-name';
+  nameSpan.textContent = 'Francisca Maxinho';
+
+  // Append elements
+  headerContent.appendChild(img);
+  headerContent.appendChild(nameSpan);
+
+  // Clear existing header contents and add new
+  header.innerHTML = '';
+  header.appendChild(headerContent);
+});
+
     // === Navigation Toggle (Hamburger Menu) ===
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.getElementById('main-nav');

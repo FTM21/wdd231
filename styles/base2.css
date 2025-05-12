@@ -39,6 +39,24 @@ header img {
   display:inline-flex;
 }
 
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* space between image and name */
+}
+
+header .header-img {
+  max-height: 80px;
+  border-radius: 10%; /* Image position */
+}
+
+header .header-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: white; 
+}
+
 header span {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
@@ -54,7 +72,7 @@ nav {
   position: absolute;
 }
 
-/* Hamburger button styles */
+
 #hamburger-btn {
   font-size: 1.5rem;
   background: none;
@@ -84,7 +102,7 @@ nav {
   color: white;
 }
 
-/* Main content styles */
+
 main {
   padding: 2rem;
 }
@@ -145,7 +163,7 @@ button.active {
   background-color: #0b7b72;
 }
 
-/* Container for course cards */
+
 #course-cards {
   display: flex;
   flex-wrap: wrap;
@@ -153,7 +171,7 @@ button.active {
   margin-top: 1rem;
 }
 
-/* Footer styles */
+
 footer {
   background-color: #c0d6df;
   padding: 1rem;
