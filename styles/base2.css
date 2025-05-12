@@ -138,12 +138,26 @@ h3 {
 }
 
 /* Card styles in Course Work */
-.card {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 1rem;
+
+.course-card {
+  border: 2px solid gray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Style for completed courses (green) */
+.course-card.completed {
+  background-color: greenyellow; /* light green */
+  border-color: yellowgreen;
+}
+
+/* Style for not completed courses (red) */
+.course-card.not-completed {
+  background-color: red;
+  border-color: red;
 }
 
 /* Buttons styles (filter buttons and course buttons) */
