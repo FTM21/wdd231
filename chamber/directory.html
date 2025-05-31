@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luanda Chamber of Commerce member directory - connecting businesses and promoting economic growth in Luanda, Angola">
+    <meta name="author" content="Francisca Maxinho">
+    <title>Member Directory - Luanda Chamber of Commerce</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <meta property="og:title" content="Luanda Chamber of Commerce - Member Directory">
+    <meta property="og:description" content="Discover leading businesses in Luanda, Angola. Connect with chamber members and explore opportunities for economic growth.">
+    <meta property="og:image" content="https://example.com/chamber/images/chamber-social.jpg">
+    <meta property="og:url" content="https://example.com/chamber/directory.html">
+    <meta property="og:type" content="website">
+    
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/base3.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/chamber-logo.jpg" alt="Luanda Chamber of Commerce Logo" class="logo">
+                <div class="header-text">
+                    <h1>Luanda Chamber of Commerce</h1>
+                    <p>Connecting Business • Building Community</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button id="hamburger-btn" aria-label="Toggle Navigation">&#9776;</button>
+            <ul id="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container">
+            <div class="directory-header">
+                <h2>Member Directory</h2>
+                <p>Explore our diverse community of business members</p>
+            </div>
+
+            <div class="view-controls">
+                <button id="grid-view-btn" class="view-btn active" aria-label="Grid View">
+                    <span class="grid-icon">⊞</span> Grid View
+                </button>
+                <button id="list-view-btn" class="view-btn" aria-label="List View">
+                    <span class="list-icon">☰</span> List View
+                </button>
+            </div>
+
+            <div id="members-container" class="members-grid">
+             
+            </div>
+
+            <div id="loading" class="loading">
+                <p>Loading members...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>📍 Rua da Missão, Luanda, Angola</p>
+                <p>📞 +244 222 123 456</p>
+                <p>✉️ info@luandachamber.ao</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Development Info</h3>
+                <p>Developed by: Francisca Maxinho</p>
+                <p>Course: WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Luanda Chamber of Commerce. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

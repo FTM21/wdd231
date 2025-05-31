@@ -1,0 +1,81 @@
+{
+    "members": [
+      {
+        "name": "Sonangol Group",
+        "address": "Rua Rainha Ginga, Luanda, Angola",
+        "phone": "+244 222 640 000",
+        "website": "https://www.sonangol.co.ao",
+        "image": "images/sonangol-logo.png",
+        "membershipLevel": 3,
+        "description": "National oil company and leading energy corporation in Angola",
+        "founded": "1976",
+        "employees": "5000+"
+      },
+      {
+        "name": "Banco Angolano de Investimentos",
+        "address": "Rua Major Kanhangulo, Luanda, Angola",
+        "phone": "+244 222 638 900",
+        "website": "https://www.bancobai.ao",
+        "image": "images/bai-logo.png",
+        "membershipLevel": 3,
+        "description": "Leading private bank in Angola providing comprehensive financial services",
+        "founded": "1997",
+        "employees": "2500+"
+      },
+      {
+        "name": "Unitel Angola",
+        "address": "Rua Fernão Mendes Pinto, Luanda, Angola",
+        "phone": "+244 923 000 000",
+        "website": "https://www.unitel.ao",
+        "image": "images/unitel-logo.png",
+        "membershipLevel": 2,
+        "description": "Major telecommunications company serving millions of customers",
+        "founded": "2001",
+        "employees": "3000+"
+      },
+      {
+        "name": "Refriango",
+        "address": "Zona Industrial de Viana, Luanda, Angola",
+        "phone": "+244 222 260 050",
+        "website": "https://www.refriango.com",
+        "image": "images/refriango-logo.png",
+        "membershipLevel": 2,
+        "description": "Leading food and beverage company producing soft drinks and beer",
+        "founded": "1995",
+        "employees": "1500+"
+      },
+      {
+        "name": "Omatapalo Construction",
+        "address": "Rua Cerveira Pereira, Luanda, Angola",
+        "phone": "+244 222 445 789",
+        "website": "https://www.omatapalo.ao",
+        "image": "images/omatapalo-logo.png",
+        "membershipLevel": 1,
+        "description": "Construction and real estate development company",
+        "founded": "2005",
+        "employees": "800+"
+      },
+      {
+        "name": "Luanda Medical Center",
+        "address": "Rua Comandante Stona, Luanda, Angola",
+        "phone": "+244 222 330 155",
+        "website": "https://www.luandamedical.ao",
+        "image": "images/medical-logo.png",
+        "membershipLevel": 2,
+        "description": "Premier private healthcare facility in Luanda",
+        "founded": "2010",
+        "employees": "400+"
+      },
+      {
+        "name": "TechAngola Solutions",
+        "address": "Rua Ngola Mbandi, Luanda, Angola",
+        "phone": "+244 222 789 123",
+        "website": "https://www.techangola.ao",
+        "image": "images/tech-logo.png",
+        "membershipLevel": 1,
+        "description": "IT consulting and software development company",
+        "founded": "2015",
+        "employees": "150+"
+      }
+    ]
+  }
