@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset and Base Styles */
+       
         * {
             margin: 0;
             padding: 0;
@@ -98,7 +98,7 @@
             font-weight: 300;
         }
 
-        /* Navigation Styles */
+       
         nav {
             background-color: var(--secondary-color);
             box-shadow: var(--shadow);
@@ -167,7 +167,7 @@
             padding: 2rem;
         }
 
-        /* Hero Section */
+      
         .hero {
             background: linear-gradient(rgba(196, 30, 58, 0.8), rgba(0, 0, 0, 0.8)),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f5f5f5" width="1200" height="400"/><circle fill="%23c41e3a" opacity="0.1" cx="200" cy="100" r="50"/><circle fill="%23ffce00" opacity="0.1" cx="800" cy="300" r="80"/><circle fill="%23000" opacity="0.05" cx="1000" cy="150" r="60"/></svg>');
@@ -253,7 +253,7 @@
             padding-bottom: 0.5rem;
         }
 
-        /* Events Section */
+        
         .event {
             padding: 1.5rem;
             margin-bottom: 1.5rem;
@@ -655,7 +655,7 @@
                     </div>
                     <div class="event">
                         <h4>Small Business Workshop</h4>
-                        <p class="event-date">June 28, 2025</p>
+                        <p class="event-date">June 21, 2025</p>
                         <p>Learn digital marketing strategies and business development techniques from industry experts.</p>
                     </div>
                 </section>
@@ -728,7 +728,7 @@
                     "address": "Rua Major Kanhangulo, Luanda, Angola",
                     "phone": "+244 222 638 900",
                     "website": "https://www.bancobai.ao",
-                    "image": "images/bai-logo.png",
+                    "image": "images/bai-logo.jpeg",
                     "membershipLevel": 3,
                     "description": "Leading private bank in Angola providing comprehensive financial services",
                     "founded": "1997",
@@ -815,14 +815,14 @@
                     mainNav.classList.toggle('show');
                 });
 
-                // Close nav when clicking outside
+                
                 document.addEventListener('click', (e) => {
                     if (!hamburgerBtn.contains(e.target) && !mainNav.contains(e.target)) {
                         mainNav.classList.remove('show');
                     }
                 });
 
-                // Close nav when window is resized to larger screen
+                
                 window.addEventListener('resize', () => {
                     if (window.innerWidth > 768) {
                         mainNav.classList.remove('show');
@@ -831,7 +831,7 @@
             }
         }
 
-        // Update footer dates
+        
         function updateFooterDates() {
             const currentYear = document.getElementById('currentYear');
             const lastModified = document.getElementById('lastModified');
@@ -845,12 +845,12 @@
             }
         }
 
-        // Weather functionality
+        
         async function loadWeather() {
             const weatherInfo = document.getElementById('weatherInfo');
             
             try {
-                // Mock weather data for Luanda, Angola
+                
                 const mockWeatherData = {
                     name: "Luanda",
                     main: {

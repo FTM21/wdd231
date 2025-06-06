@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Threads - Site Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #333333 50%, #666666 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border: 3px solid #007bff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+        }
+        
+        h2 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #2d2d2d, #404040);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        h3 {
+            color: #ffffff;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+            border: 2px solid #28a745;
+            padding: 10px;
+            border-radius: 6px;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        .highlight {
+            color: #007bff;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        
+        .color-box {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 8px;
+            vertical-align: middle;
+            border: 2px solid;
+            box-shadow: 0 0 10px;
+        }
+        
+        .black { 
+            background: linear-gradient(45deg, #000000, #1a1a1a); 
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+        .light-grey { 
+            background: linear-gradient(45deg, #666666, #999999); 
+            border-color: #ffc107;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+        .white { 
+            background: linear-gradient(45deg, #ffffff, #f0f0f0); 
+            border-color: #28a745;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+        }
+        .led-blue { 
+            background: #007bff; 
+            border-color: #007bff;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+        }
+        .led-yellow { 
+            background: #ffc107; 
+            border-color: #ffc107;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+        }
+        .led-green { 
+            background: #28a745; 
+            border-color: #28a745;
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.8);
+        }
+        .led-pink { 
+            background: #e83e8c; 
+            border-color: #e83e8c;
+            box-shadow: 0 0 15px rgba(232, 62, 140, 0.8);
+        }
+        
+        .wireframe {
+            background: linear-gradient(135deg, #2d2d2d, #404040);
+            border: 3px solid #e83e8c;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(232, 62, 140, 0.3);
+        }
+        
+        .mobile-wireframe {
+            width: 200px;
+            height: 400px;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            position: relative;
+        }
+        
+        .desktop-wireframe {
+            width: 400px;
+            height: 300px;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            position: relative;
+        }
+        
+        .wireframe-header {
+            background: linear-gradient(90deg, #1a1a1a, #333333);
+            height: 50px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 12px;
+            border: 2px solid #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+        }
+        
+        .wireframe-content {
+            background: linear-gradient(45deg, #2d2d2d, #404040);
+            height: 200px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 10px;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
+        }
+        
+        .wireframe-footer {
+            background: linear-gradient(90deg, #1a1a1a, #333333);
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 10px;
+            border: 2px solid #ffc107;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+        }
+        
+        .scenario {
+            background: linear-gradient(135deg, #2d2d2d, #404040);
+            border: 3px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+        }
+        
+        .font-demo {
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            background: linear-gradient(145deg, #2d2d2d, #404040);
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid #28a745;
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .font-demo h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            border: 2px solid #ffc107;
+            padding: 10px;
+            border-radius: 6px;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+        }
+        
+        .light { font-weight: 300; }
+        .regular { font-weight: 400; }
+        .semibold { font-weight: 600; }
+        .bold { font-weight: 700; }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Urban Threads</h1>
+        
+        <h2>1. Site Name</h2>
+        <p><span class="highlight">Urban Threads</span> was chosen because it perfectly captures the essence of streetwear culture. "Urban" represents the city lifestyle and street culture that defines this fashion movement, while "Threads" is a modern slang term for clothing that resonates with our target audience. The name suggests connectivity and community, reflecting how streetwear brings people together through shared style and cultural expression.</p>
+        
+        <h2>2. Site Purpose</h2>
+        <p>Urban Threads serves as a comprehensive <span class="highlight">e-commerce platform</span> that provides:</p>
+        <ul>
+            <li>Curated streetwear clothing and accessories from established and emerging brands</li>
+            <li>Authentic urban fashion pieces including graphic tees, hoodies, sneakers, and accessories</li>
+            <li>Style guides and fashion inspiration for streetwear enthusiasts</li>
+            <li>Secure online shopping with detailed product information and customer reviews</li>
+            <li>Community connection through fashion trends and cultural content</li>
+        </ul>
+        
+        <h2>3. Scenarios</h2>
+        <div class="scenario">
+            <h3>Scenario 1: The Style Explorer</h3>
+            <p>Marcus, a 19-year-old college student, wants to update his wardrobe with authentic streetwear pieces. He visits Urban Threads to browse the latest graphic tees and hoodies, read reviews from other buyers, and find pieces that match his personality. He's looking for brands that represent his values and style while staying within his budget.</p>
+        </div>
+        
+        <div class="scenario">
+            <h3>Scenario 2: The Fashion Trendsetter</h3>
+            <p>Zara, a 24-year-old social media influencer, needs unique streetwear pieces for her content creation. She uses Urban Threads to discover emerging designers and limited-edition drops that will make her stand out. She values authenticity and wants to support brands that align with street culture and artistic expression.</p>
+        </div>
+        
+        <h2>4. Color Schema</h2>
+        <p>Our color palette creates a sophisticated <span class="highlight">gradient-based design</span> with vibrant LED accents for interactive elements:</p>
+        
+        <h3>Base Gradient Colors:</h3>
+        <p><span class="color-box black"></span><strong>Black to Dark Grey Gradient (#000000 - #1a1a1a)</strong> - Primary backgrounds and containers</p>
+        <p><span class="color-box light-grey"></span><strong>Light Grey Gradient (#666666 - #999999)</strong> - Secondary elements and content areas</p>
+        <p><span class="color-box white"></span><strong>White to Light Grey Gradient (#ffffff - #f0f0f0)</strong> - Text content and highlights</p>
+        
+        <h3>LED Accent Colors:</h3>
+        <p><span class="color-box led-blue"></span><strong>LED Blue (#007bff)</strong> - Primary buttons, navigation, and main CTAs</p>
+        <p><span class="color-box led-yellow"></span><strong>LED Yellow (#ffc107)</strong> - Sale badges, warnings, and special offers</p>
+        <p><span class="color-box led-green"></span><strong>LED Green (#28a745)</strong> - Success states, availability, and confirmation buttons</p>
+        <p><span class="color-box led-pink"></span><strong>LED Pink (#e83e8c)</strong> - Featured items, favorites, and accent elements</p>
+        
+        <h3>Color Application:</h3>
+        <ul>
+            <li><strong>Black Gradient:</strong> Website background, navigation bar, product cards</li>
+            <li><strong>Light Grey Gradient:</strong> Content sections, sidebar elements, form backgrounds</li>
+            <li><strong>White Gradient:</strong> Body text, product descriptions, main content</li>
+            <li><strong>LED Blue:</strong> Primary buttons, hamburger menu, navigation links</li>
+            <li><strong>LED Yellow:</strong> Sale notifications, promotional banners, cart indicators</li>
+            <li><strong>LED Green:</strong> "Add to Cart" confirmations, stock availability, success messages</li>
+            <li><strong>LED Pink:</strong> Wishlist hearts, featured product borders, special collections</li>
+        </ul>
+        
+        <h2>5. Typography</h2>
+        <div class="font-demo">
+            <h4>Inter Font Family</h4>
+            <p class="light">Light (300) - Used for subtle text and secondary information</p>
+            <p class="regular">Regular (400) - Primary body text and product descriptions</p>
+            <p class="semibold">Semibold (600) - Section headings and important labels</p>
+            <p class="bold">Bold (700) - Main headings and brand elements</p>
+        </div>
+        
+        <p><span class="highlight">Inter</span> was selected for its modern, clean appearance that maintains excellent readability across all devices. This geometric sans-serif font embodies the minimalist aesthetic while providing the technical precision that complements our futuristic urban theme. Inter's versatility allows it to work effectively for both large display text and small product details.</p>
+        
+        <h2>6. Wireframes</h2>
+        <div style="text-align: center;">
+            <div class="wireframe mobile-wireframe">
+                <h3 style="color: #ffffff; margin-bottom: 15px; border: 2px solid #007bff; padding: 8px; border-radius: 6px; background: linear-gradient(45deg, #1a1a1a, #2d2d2d); box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);">Mobile View</h3>
+                <div class="wireframe-header">☰ URBAN THREADS 🛒</div>
+                <div class="wireframe-content">
+                    HERO IMAGE<br>
+                    FEATURED PRODUCTS<br>
+                    CATEGORIES
+                </div>
+                <div class="wireframe-content" style="height: 80px; border-color: #e83e8c; box-shadow: 0 0 10px rgba(232, 62, 140, 0.4);">
+                    NEW ARRIVALS
+                </div>
+                <div class="wireframe-footer">☰ MENU | 🛒 CART | 👤 PROFILE</div>
+            </div>
+            
+            <div class="wireframe desktop-wireframe">
+                <h3 style="color: #ffffff; margin-bottom: 15px; border: 2px solid #007bff; padding: 8px; border-radius: 6px; background: linear-gradient(45deg, #1a1a1a, #2d2d2d); box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);">Desktop View</h3>
+                <div class="wireframe-header">LOGO | NAV MENU | SEARCH | 🛒 CART</div>
+                <div class="wireframe-content">
+                    HERO BANNER | FEATURED COLLECTIONS | TRENDING ITEMS
+                </div>
+                <div class="wireframe-footer">FOOTER LINKS | SOCIAL MEDIA | NEWSLETTER</div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 20px;">The wireframes showcase LED-contoured elements with gradient backgrounds. The hamburger menu (☰) on mobile uses LED blue borders, while buttons and interactive elements feature the vibrant LED color scheme with glowing box shadows for that futuristic streetwear aesthetic.</p>
+    </div>
+</body>
+</html>
