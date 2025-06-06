@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luanda Chamber of Commerce - connecting businesses and promoting economic growth in Luanda, Angola">
+    <meta name="author" content="Francisca Maxinho">
+    <title>Home - Luanda Chamber of Commerce</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <meta property="og:title" content="Luanda Chamber of Commerce - Home">
+    <meta property="og:description" content="Connecting Business • Building Community in Luanda, Angola">
+    <meta property="og:image" content="https://example.com/chamber/images/chamber-social.jpg">
+    <meta property="og:url" content="https://example.com/chamber/index.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #c41e3a;
+            --secondary-color: #000000;
+            --accent-color: #ffce00;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #666666;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border: 3px solid var(--accent-color);
+        }
+
+        .header-text h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .header-text p {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--secondary-color);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        #hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        #main-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-nav li {
+            flex: 1;
+        }
+
+        #main-nav a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-right: 1px solid var(--dark-gray);
+        }
+
+        #main-nav li:last-child a {
+            border-right: none;
+        }
+
+        #main-nav a:hover,
+        #main-nav a.active {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        main {
+            background-color: var(--light-gray);
+            min-height: calc(100vh - 200px);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(196, 30, 58, 0.8), rgba(0, 0, 0, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f5f5f5" width="1200" height="400"/><circle fill="%23c41e3a" opacity="0.1" cx="200" cy="100" r="50"/><circle fill="%23ffce00" opacity="0.1" cx="800" cy="300" r="80"/><circle fill="%23000" opacity="0.05" cx="1000" cy="150" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 206, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 206, 0, 0.4);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Section Styles */
+        .section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Events Section */
+        .event {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s ease;
+        }
+
+        .event:hover {
+            transform: translateX(5px);
+        }
+
+        .event h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .event-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event p {
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+
+        /* Weather Section */
+        .weather-info {
+            text-align: center;
+        }
+
+        .current-weather {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+            border-radius: var(--border-radius);
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+        }
+
+        .weather-details h4 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-desc {
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            text-transform: capitalize;
+        }
+
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .forecast-day {
+            text-align: center;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease;
+        }
+
+        .forecast-day:hover {
+            background: var(--medium-gray);
+        }
+
+        .forecast-day h5 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .forecast-temp {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Member Spotlights */
+        .spotlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .spotlight-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spotlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .spotlight-card.gold {
+            border-color: #ffd700;
+        }
+
+        .spotlight-card.silver {
+            border-color: #c0c0c0;
+        }
+
+        .spotlight-card.bronze {
+            border-color: #cd7f32;
+        }
+
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-gold {
+            background: #ffd700;
+            color: var(--secondary-color);
+        }
+
+        .badge-silver {
+            background: #c0c0c0;
+            color: var(--secondary-color);
+        }
+
+        .badge-bronze {
+            background: #cd7f32;
+            color: var(--white);
+        }
+
+        .company-info h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .company-info p {
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .company-website {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .company-website:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--dark-gray);
+        }
+
+        /* Loading and Error States */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--dark-gray);
+            font-style: italic;
+        }
+
+        .error {
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            background: #ffeaea;
+            border-radius: var(--border-radius);
+            border: 1px solid #ffcccb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-text p {
+                font-size: 0.9rem;
+            }
+
+            #hamburger-btn {
+                display: block;
+            }
+
+            #main-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--secondary-color);
+                box-shadow: var(--shadow);
+            }
+
+            #main-nav.show {
+                display: flex;
+            }
+
+            #main-nav a {
+                border-right: none;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .current-weather {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .forecast {
+                grid-template-columns: 1fr;
+            }
+
+            .main-container {
+                padding: 1rem;
+            }
+
+            .spotlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">LCC</div>
+                <div class="header-text">
+                    <h1>Luanda Chamber of Commerce</h1>
+                    <p>Connecting Business • Building Community</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button id="hamburger-btn" aria-label="Toggle Navigation">&#9776;</button>
+            <ul id="main-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container">
+            
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Welcome to Luanda</h2>
+                    <p>Where Business Thrives and Community Grows</p>
+                    <a href="join.html" class="cta-button">Join Our Chamber Today!</a>
+                </div>
+            </section>
+
+          
+            <div class="content-grid">
+                
+                <section class="section">
+                    <h3>🎉 Current Events</h3>
+                    <div class="event">
+                        <h4>Angola Business Summit 2025</h4>
+                        <p class="event-date">June 15, 2025</p>
+                        <p>Join leading entrepreneurs and business leaders from across Angola for our premier networking and development event.</p>
+                    </div>
+                    <div class="event">
+                        <h4>Monthly Chamber Mixer</h4>
+                        <p class="event-date">June 20, 2025</p>
+                        <p>Network with fellow chamber members at the Luanda Bay Hotel. Light refreshments and live music included.</p>
+                    </div>
+                    <div class="event">
+                        <h4>Small Business Workshop</h4>
+                        <p class="event-date">June 28, 2025</p>
+                        <p>Learn digital marketing strategies and business development techniques from industry experts.</p>
+                    </div>
+                </section>
+
+            
+                <section class="section">
+                    <h3>🌤️ Luanda Weather</h3>
+                    <div class="weather-info" id="weatherInfo">
+                        <div class="loading">Loading weather data...</div>
+                    </div>
+                </section>
+            </div>
+
+            
+            <section class="section full-width">
+                <h3>⭐ Member Spotlights</h3>
+                <div class="spotlights" id="spotlights">
+                    <div class="loading">Loading member spotlights...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>📍 Rua da Missão, Luanda, Angola</p>
+                <p>📞 +244 222 123 456</p>
+                <p>✉️ info@luandachamber.ao</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Development Info</h3>
+                <p>Developed by: Francisca Maxinho</p>
+                <p>Course: WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Luanda Chamber of Commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Chamber member data
+        const chamberMembers = {
+            "members": [
+                {
+                    "name": "Sonangol Group",
+                    "address": "Rua Rainha Ginga, Luanda, Angola",
+                    "phone": "+244 222 640 000",
+                    "website": "https://www.sonangol.co.ao",
+                    "image": "images/sonangol-logo.png",
+                    "membershipLevel": 3,
+                    "description": "National oil company and leading energy corporation in Angola",
+                    "founded": "1976",
+                    "employees": "5000+",
+                    "logo": "SNG"
+                },
+                {
+                    "name": "Banco Angolano de Investimentos",
+                    "address": "Rua Major Kanhangulo, Luanda, Angola",
+                    "phone": "+244 222 638 900",
+                    "website": "https://www.bancobai.ao",
+                    "image": "images/bai-logo.png",
+                    "membershipLevel": 3,
+                    "description": "Leading private bank in Angola providing comprehensive financial services",
+                    "founded": "1997",
+                    "employees": "2500+",
+                    "logo": "BAI"
+                },
+                {
+                    "name": "Unitel Angola",
+                    "address": "Rua Fernão Mendes Pinto, Luanda, Angola",
+                    "phone": "+244 923 000 000",
+                    "website": "https://www.unitel.ao",
+                    "image": "images/unitel-logo.png",
+                    "membershipLevel": 2,
+                    "description": "Major telecommunications company serving millions of customers",
+                    "founded": "2001",
+                    "employees": "3000+",
+                    "logo": "UTL"
+                },
+                {
+                    "name": "Refriango",
+                    "address": "Zona Industrial de Viana, Luanda, Angola",
+                    "phone": "+244 222 260 050",
+                    "website": "https://www.refriango.com",
+                    "image": "images/refriango-logo.png",
+                    "membershipLevel": 2,
+                    "description": "Leading food and beverage company producing soft drinks and beer",
+                    "founded": "1995",
+                    "employees": "1500+",
+                    "logo": "RFG"
+                },
+                
+                {
+                    "name": "Luanda Medical Center",
+                    "address": "Rua Comandante Stona, Luanda, Angola",
+                    "phone": "+244 222 330 155",
+                    "website": "https://www.luandamedical.ao",
+                    "image": "images/medical-logo.png",
+                    "membershipLevel": 2,
+                    "description": "Premier private healthcare facility in Luanda",
+                    "founded": "2010",
+                    "employees": "400+",
+                    "logo": "LMC"
+                },
+                {
+                    "name": "TechAngola Solutions",
+                    "address": "Rua Ngola Mbandi, Luanda, Angola",
+                    "phone": "+244 222 789 123",
+                    "website": "https://www.techangola.ao",
+                    "image": "images/tech-logo.png",
+                    "membershipLevel": 1,
+                    "description": "IT consulting and software development company",
+                    "founded": "2015",
+                    "employees": "150+",
+                    "logo": "TAS"
+                }
+            ]
+        };
+
+        // Company logo colors and backgrounds
+        const logoStyles = {
+            "SNG": { background: "#1e4d72", color: "#ffffff" },
+            "BAI": { background: "#c41e3a", color: "#ffffff" },
+            "UTL": { background: "#ff6b35", color: "#ffffff" },
+            "RFG": { background: "#2e8b57", color: "#ffffff" },
+            "LMC": { background: "#00ced1", color: "#ffffff" },
+            "TAS": { background: "#4169e1", color: "#ffffff" }
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+            updateFooterDates();
+            loadWeather();
+            loadSpotlights();
+        });
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mainNav = document.getElementById('main-nav');
+
+            if (hamburgerBtn && mainNav) {
+                hamburgerBtn.addEventListener('click', () => {
+                    mainNav.classList.toggle('show');
+                });
+
+                // Close nav when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!hamburgerBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mainNav.classList.remove('show');
+                    }
+                });
+
+                // Close nav when window is resized to larger screen
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        mainNav.classList.remove('show');
+                    }
+                });
+            }
+        }
+
+        // Update footer dates
+        function updateFooterDates() {
+            const currentYear = document.getElementById('currentYear');
+            const lastModified = document.getElementById('lastModified');
+            
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
+            
+            if (lastModified) {
+                lastModified.textContent = document.lastModified;
+            }
+        }
+
+        // Weather functionality
+        async function loadWeather() {
+            const weatherInfo = document.getElementById('weatherInfo');
+            
+            try {
+                // Mock weather data for Luanda, Angola
+                const mockWeatherData = {
+                    name: "Luanda",
+                    main: {
+                        temp: 26,
+                        temp_max: 28,
+                        temp_min: 24
+                    },
+                    weather: [{
+                        main: "Partly Cloudy",
+                        description: "partly cloudy",
+                        icon: "02d"
+                    }]
+                };
+
+                const mockForecast = [
+                    { day: "Today", high: 28, low: 24 },
+                    { day: "Tomorrow", high: 29, low: 25 },
+                    { day: "Sunday", high: 27, low: 23 }
+                ];
+
+                displayWeather(mockWeatherData, mockForecast);
+                
+            } catch (error) {
+                console.error('Error loading weather:', error);
+                weatherInfo.innerHTML = '<div class="error">Weather information temporarily unavailable</div>';
+            }
+        }
+
+        function displayWeather(current, forecast) {
+            const weatherInfo = document.getElementById('weatherInfo');
+            
+            const weatherHTML = `
+                <div class="current-weather">
+                    <div class="weather-icon">🌤️</div>
+                    <div class="weather-details">
+                        <h4>${Math.round(current.main.temp)}°C</h4>
+                        <div class="weather-desc">${current.weather[0].description}</div>
+                    </div>
+                </div>
+                <div class="forecast">
+                    ${forecast.map(day => `
+                        <div class="forecast-day">
+                            <h5>${day.day}</h5>
+                            <div class="forecast-temp">${day.high}°/${day.low}°</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            weatherInfo.innerHTML = weatherHTML;
+        }
+
+        // Member spotlights functionality
+        function loadSpotlights() {
+            const spotlightsContainer = document.getElementById('spotlights');
+        }
+
+</html>
