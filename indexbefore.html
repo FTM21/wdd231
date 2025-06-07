@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 Home Page for Francisca Maxinho">
+    <meta name="author" content="Francisca Maxinho">
+    <title>Francisca Maxinho - WDD 231</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gidole&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base2.css">
+    <script src="scripts/dynamic.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/ft.jpg" alt="Photo of Francisca Maxinho" class="header-img">
+            <span class="header-name">Francisca Maxinho</span>
+        </div>
+    </header>
+
+    <nav>
+        <button id="hamburger-btn">&#9776;</button>
+        <ul id="main-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="chamber/index.html">Chamber</a></li>
+            <li><a href="final/index.html">Final</a></li>
+            <li><a href="https://github.com/FTM21">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+
+        <!-- Course Work - Section 01--> 
+        <section id="work-section">
+            <h2>Course Work</h2>
+            <div class="card">
+                <h3>*</h3>
+                <h3>*</h3>
+                <h3>*</h3>
+            </div>
+        </section>
+
+        <!-- Lisbon- Section 02--> 
+        <section id="lisbon-section">
+            <h2>Lisbon, Portugal</h2>
+            <img src="images/lisbon1.jpg" alt="Lisbon, Portugal cityscape">
+            <p>Colorful City</p>
+        </section>
+
+        <!-- Course- Section 03--> 
+        <section id="course-section">
+            <h2>Web and computer programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="all-btn" class="active">All</button>
+                <button id="cse-btn">CSE</button>
+                <button id="wdd-btn">WDD</button>
+            </div> 
+            <div id="course-cards"> 
+                <button id="cse110-btn">CSE 110</button>
+                <button id="wdd130-btn">WDD 130</button>
+                <button id="cse111-btn">CSE 111</button>
+                <button id="cse210-btn">CSE 210</button>
+                <button id="wdd131-btn">WDD 131</button>
+                <button id="wdd231-btn">WDD231</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Francisca Maxinho | Lisbon, Portugal</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
