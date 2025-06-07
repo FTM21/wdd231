@@ -1,231 +1,211 @@
 :root {
-    --primary-color: #1e3a5f;
-    --secondary-color: #4a90a4;
-    --accent-color: #f39c12;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --border-color: #ddd;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --heading-font: 'Montserrat', sans-serif;
-    --body-font: 'Roboto', sans-serif;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: var(--body-font);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-color);
-  }
-  
-  /* Header Styles */
+  --primary-color: mediumturquoise;
+  --secondary-color: #c0d6df;
+  --accent-color: #0b7b72;
+  --light-color: #d4e4e2;
+  --dark-color: black;
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Reset some default styles for consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: var(--body-font);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+}
+
+header img {
+  max-height: 80px; /* Updated to match .header-img */
+  margin-right: 0.7rem;
+  display: inline-flex;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between image and name */
+}
+
+header .header-name {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: white;
+}
+
+header span {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: turquoise;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  position: absolute;
+  width: 100%; /* Added to allow full width */
+  z-index: 100; /* Ensure it stays on top */
+}
+
+#hamburger-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Main navigation list */
+#main-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#main-nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#main-nav li a:hover,
+#main-nav li a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 2rem;
+  background-color: whitesmoke;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card styles for Course Work */
+.course-card {
+  border: 2px solid gray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Styles for completed courses (green) */
+.course-card.completed {
+  background-color: greenyellow; /* light green */
+  border-color: yellowgreen;
+}
+
+/* Styles for not completed courses (red) */
+.course-card.not-completed {
+  background-color: red;
+  border-color: red;
+}
+
+/* Button styles (filter buttons and course buttons) */
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+button.active {
+  background-color: var(--accent-color);
+}
+
+#course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+@media (max-width: 768px) {
   header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 1rem 0;
-    box-shadow: var(--shadow);
+      flex-direction: column; /* Stacks header items on smaller screens */
+      align-items: flex-start;
   }
-  
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+
+  header img {
+      max-height: 40px; /* Adjust image size on smaller screens */
   }
-  
-  .logo-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+
+  header .header-content {
+      gap: 10px; /* Reduce gap between items on smaller screens */
   }
-  
-  .logo {
-    height: 60px;
-    width: auto;
-  }
-  
-  .header-text h1 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-  }
-  
-  .header-text p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    font-weight: 300;
-  }
-  
-  /* Navigation Styles */
+
   nav {
-    background-color: white;
-    border-bottom: 3px solid var(--accent-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+      flex-direction: column; /* Stacks nav items on smaller screens */
   }
-  
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  #hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-  
+
   #main-nav {
-    list-style: none;
-    display: flex;
-    gap: 0;
-    margin: 0;
-    padding: 0;
+      flex-direction: column; /* Stacks list items on smaller screens */
   }
-  
-  #main-nav li a {
-    display: block;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
+
+  #main-nav li {
+      margin: 0.5rem 0; /* Adds spacing between nav items */
   }
-  
-  #main-nav li a:hover,
-  #main-nav li a.active {
-    color: var(--primary-color);
-    border-bottom-color: var(--accent-color);
-    background-color: rgba(30, 58, 95, 0.05);
-  }
-  
-  /* Main Content */
-  main {
-    min-height: calc(100vh - 200px);
-  }
-  
-  .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: var(--dark-color);
-    color: white;
-    margin-top: 3rem;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .footer-section h3 {
-    font-family: var(--heading-font);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-  }
-  
-  .footer-section p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-section ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
-    color: var(--accent-color);
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    #hamburger-btn {
-      display: block;
-    }
-  
-    #main-nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: white;
-      box-shadow: var(--shadow);
-    }
-  
-    #main-nav.show {
-      display: flex;
-    }
-  
-    #main-nav li a {
-      padding: 1rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-  
-    .header-text h1 {
-      font-size: 1.4rem;
-    }
-  
-    .header-text p {
-      font-size: 0.8rem;
-    }
-  
-    .logo {
-      height: 50px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .main-container {
-      padding: 1rem 0.5rem;
-    }
-  
-    .footer-container {
-      padding: 1.5rem 1rem;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  }
+}
