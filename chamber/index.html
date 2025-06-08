@@ -505,7 +505,7 @@
     </footer>
 
     <script>
-        // Sample chamber members data (simulating JSON data source)
+        //  JSON data source
         const chamberMembers = [
             {
                 name: "Sonangol Group",
@@ -575,7 +575,7 @@
                 selectedMembers.push(eligibleMembers.splice(randomIndex, 1)[0]);
             }
             
-            // Generate HTML for spotlights
+           
             spotlightsContainer.innerHTML = selectedMembers.map(member => `
                 <div class="spotlight-card">
                     <div class="membership-badge ${member.membership}">${member.membership}</div>
@@ -595,9 +595,8 @@
             const weatherContainer = document.getElementById('weather');
             
             try {
-                // Using OpenWeatherMap API for Luanda, Angola
-                // Note: In a real implementation, you would use your own API key
-                const API_KEY = 'your-api-key-here'; // Replace with actual API key
+
+                const API_KEY = 'your-api-key-here'; 
                 const city = 'Luanda';
                 const country = 'AO';
                 
