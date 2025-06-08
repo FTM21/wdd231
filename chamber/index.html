@@ -1,139 +1,673 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luanda Chamber of Commerce - connecting businesses and promoting economic growth in Luanda, Angola">
-    <meta name="author" content="Francisca Maxinho">
-    <title>Home - Luanda Chamber of Commerce</title>
-    
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <meta property="og:title" content="Luanda Chamber of Commerce - Home">
-    <meta property="og:description" content="Connecting Business • Building Community in Luanda, Angola">
-    <meta property="og:type" content="website">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="chamber/styles.css"> 
+    <meta name="description" content="Angolan Chamber of Commerce - Promoting business growth and economic development in Angola">
+    <meta name="keywords" content="Angola, Chamber of Commerce, Business, Trade, Economic Development">
+    <title>Home - Angolan Chamber of Commerce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #34495e;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FFB84D" width="100%" height="100%"/><path fill="%23FF6B35" d="M0,400 Q600,200 1200,400 L1200,600 L0,600 Z"/><circle fill="%23E74C3C" cx="200" cy="150" r="80"/><circle fill="%23E74C3C" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #e74c3c;
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Events Section */
+        .event-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-item:last-child {
+            border-bottom: none;
+        }
+
+        .event-date {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        /* Weather Section */
+        .weather-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .current-weather {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .temp {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .description {
+            text-transform: capitalize;
+            margin-top: 0.5rem;
+        }
+
+        .forecast {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .forecast-day {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        /* Spotlights Section */
+        .spotlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .spotlight-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spotlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .membership-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .gold {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #b8860b;
+        }
+
+        .silver {
+            background: linear-gradient(45deg, #c0c0c0, #e5e5e5);
+            color: #708090;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-details {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .company-website {
+            display: inline-block;
+            color: #e74c3c;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        .company-website:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .weather-info {
+                grid-template-columns: 1fr;
+            }
+
+            .current-weather {
+                margin-bottom: 1rem;
+            }
+
+            .spotlights {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            nav a {
+                padding: 1rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+                border-bottom: 1px solid #455a64;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .error {
+            text-align: center;
+            color: #e74c3c;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo">LCC</div>
-                <div class="header-text">
-                    <h1>Luanda Chamber of Commerce</h1>
-                    <p>Connecting Business • Building Community</p>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-img">ACC</div>
+                <div>
+                    <h1>Angolan Chamber of Commerce</h1>
+                    <p>Promoting Business Excellence</p>
                 </div>
+            </div>
+            <div class="contact-info">
+                <p>📞 +244 222 123 456</p>
+                <p>📧 info@angolancc.ao</p>
+                <p>📍 Luanda, Angola</p>
             </div>
         </div>
     </header>
 
     <nav>
         <div class="nav-container">
-            <button id="hamburger-btn" aria-label="Toggle Navigation">&#9776;</button>
-            <ul id="main-nav">
+            <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <div class="main-container">
-            <section class="hero">
-                <div class="hero-content">
-                    <h2>Welcome to Luanda</h2>
-                    <p>Where Business Thrives and Community Grows</p>
-                    <a href="join.html" class="cta-button">Join Our Chamber Today!</a>
-                </div>
-            </section>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Angola's Premier Business Network</h2>
+            <p>Connecting businesses, fostering growth, and driving economic development across Angola</p>
+            <a href="join.html" class="cta-button">Join Our Chamber Today</a>
+        </div>
+    </section>
 
-            <div class="content-grid">
+    <main>
+        <div class="content-grid">
+            <div>
+                <!-- Current Events Section -->
                 <section class="section">
-                    <h3>🎉 Current Events</h3>
-                    <div class="event">
-                        <h4>Angola Business Summit 2025</h4>
-                        <p class="event-date">June 16, 2025</p>
-                        <p>Join leading entrepreneurs and business leaders from across Angola for our premier networking and development event.</p>
+                    <h3><span class="section-icon">📅</span>Current Events</h3>
+                    <div class="event-item">
+                        <div class="event-date">June 15, 2025</div>
+                        <div class="event-title">Business Networking Breakfast</div>
+                        <p>Join fellow business leaders for networking and insights on the latest market trends in Angola.</p>
                     </div>
-                    <div class="event">
-                        <h4>Monthly Chamber Mixer</h4>
-                        <p class="event-date">June 20, 2025</p>
-                        <p>Network with fellow chamber members at the Luanda Bay Hotel. Light refreshments and live music included.</p>
+                    <div class="event-item">
+                        <div class="event-date">June 22, 2025</div>
+                        <div class="event-title">Export-Import Seminar</div>
+                        <p>Learn about international trade opportunities and regulatory requirements for Angolan businesses.</p>
                     </div>
-                    <div class="event">
-                        <h4>Small Business Workshop</h4>
-                        <p class="event-date">June 21, 2025</p>
-                        <p>Learn digital marketing strategies and business development techniques from industry experts.</p>
+                    <div class="event-item">
+                        <div class="event-date">July 1, 2025</div>
+                        <div class="event-title">Annual Business Awards Gala</div>
+                        <p>Celebrating excellence in Angolan business. Nominations now open for outstanding achievements.</p>
                     </div>
                 </section>
 
+                <!-- Company Spotlights Section -->
                 <section class="section">
-                    <h3>🌤️ Luanda Weather</h3>
-                    <div class="weather-info" id="weatherInfo">
+                    <h3><span class="section-icon">⭐</span>Member Spotlights</h3>
+                    <div class="spotlights" id="spotlights">
+                        <div class="loading">Loading member spotlights...</div>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <!-- Weather Section -->
+                <section class="section">
+                    <h3><span class="section-icon">🌤️</span>Luanda Weather</h3>
+                    <div id="weather">
                         <div class="loading">Loading weather data...</div>
                     </div>
                 </section>
             </div>
-
-            <section class="section full-width">
-                <h3>⭐ Member Spotlights</h3>
-                <div class="spotlights" id="spotlights">
-                    <div class="loading">Loading member spotlights...</div>
-                    <div class="grid-container">
-                        <figure>
-                            <img src="images/sonangol-logo.png" alt="Sonangol">
-                            <figcaption>Gold Member</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="images/unitel-logo.png" alt="Unitel">
-                            <figcaption>Gold Member</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="images/tech-logo.png" alt="TechAngola">
-                            <figcaption>Silver Member</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Contact Information</h3>
-                <p>📍 Rua da Missão, Luanda, Angola</p>
-                <p>📞 +244 222 123 456</p>
-                <p>✉️ info@luandachamber.ao</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Development Info</h3>
-                <p>Developed by: Francisca Maxinho</p>
-                <p>Course: WDD 231</p>
-                <p>Last Modified: <span id="lastModified"></span></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> Luanda Chamber of Commerce. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Angolan Chamber of Commerce. All rights reserved.</p>
+            <p>Promoting business growth and economic development in Angola</p>
+            <p>Last Updated: <span id="lastModified"></span></p>
         </div>
     </footer>
 
-    <script src="scripts/scripts.js"></script> 
+    <script>
+        // Sample chamber members data (simulating JSON data source)
+        const chamberMembers = [
+            {
+                name: "Sonangol Group",
+                logo: "SG",
+                phone: "+244 222 640 000",
+                address: "Rua Rainha Ginga 29/31, Luanda",
+                website: "https://www.sonangol.co.ao",
+                membership: "gold"
+            },
+            {
+                name: "Banco Angolano de Investimentos",
+                logo: "BAI",
+                phone: "+244 222 690 000",
+                address: "Rua Major Kanhangulo 81, Luanda",
+                website: "https://www.bancobai.ao",
+                membership: "gold"
+            },
+            {
+                name: "Empresa Nacional de Diamantes",
+                logo: "END",
+                phone: "+244 272 260 000",
+                address: "Saurimo, Lunda Sul",
+                website: "https://www.endiama.co.ao",
+                membership: "silver"
+            },
+            {
+                name: "Angola Telecom",
+                logo: "AT",
+                phone: "+244 222 510 000",
+                address: "Rua Ndunduma 88, Luanda",
+                website: "https://www.angolatelecom.ao",
+                membership: "gold"
+            },
+            {
+                name: "Companhia de Seguros Saham",
+                logo: "CSS",
+                phone: "+244 222 440 000",
+                address: "Largo do Kinaxixi 14, Luanda",
+                website: "https://www.saham.ao",
+                membership: "silver"
+            },
+            {
+                name: "Refriango",
+                logo: "REF",
+                phone: "+244 222 320 000",
+                address: "Zona Industrial de Viana, Luanda",
+                website: "https://www.refriango.co.ao",
+                membership: "silver"
+            }
+        ];
+
+        // Function to load member spotlights
+        function loadSpotlights() {
+            const spotlightsContainer = document.getElementById('spotlights');
+            
+            // Filter gold and silver members
+            const eligibleMembers = chamberMembers.filter(member => 
+                member.membership === 'gold' || member.membership === 'silver'
+            );
+            
+            // Randomly select 2-3 members
+            const numSpotlights = Math.floor(Math.random() * 2) + 2; // 2 or 3
+            const selectedMembers = [];
+            
+            for (let i = 0; i < numSpotlights && i < eligibleMembers.length; i++) {
+                const randomIndex = Math.floor(Math.random() * eligibleMembers.length);
+                selectedMembers.push(eligibleMembers.splice(randomIndex, 1)[0]);
+            }
+            
+            // Generate HTML for spotlights
+            spotlightsContainer.innerHTML = selectedMembers.map(member => `
+                <div class="spotlight-card">
+                    <div class="membership-badge ${member.membership}">${member.membership}</div>
+                    <div class="company-logo">${member.logo}</div>
+                    <div class="company-name">${member.name}</div>
+                    <div class="company-details">
+                        📞 ${member.phone}<br>
+                        📍 ${member.address}
+                    </div>
+                    <a href="${member.website}" class="company-website" target="_blank">Visit Website</a>
+                </div>
+            `).join('');
+        }
+
+        // Function to load weather data
+        async function loadWeather() {
+            const weatherContainer = document.getElementById('weather');
+            
+            try {
+                // Using OpenWeatherMap API for Luanda, Angola
+                // Note: In a real implementation, you would use your own API key
+                const API_KEY = 'your-api-key-here'; // Replace with actual API key
+                const city = 'Luanda';
+                const country = 'AO';
+                
+               
+                const mockCurrentWeather = {
+                    main: { temp: 28 },
+                    weather: [{ description: 'partly cloudy' }]
+                };
+                
+                const mockForecast = {
+                    list: [
+                        { dt_txt: '2025-06-09', main: { temp: 29 } },
+                        { dt_txt: '2025-06-10', main: { temp: 27 } },
+                        { dt_txt: '2025-06-11', main: { temp: 30 } }
+                    ]
+                };
+                
+                // Generate weather HTML
+                weatherContainer.innerHTML = `
+                    <div class="weather-info">
+                        <div class="current-weather">
+                            <div class="temp">${Math.round(mockCurrentWeather.main.temp)}°C</div>
+                            <div class="description">${mockCurrentWeather.weather[0].description}</div>
+                            <div style="margin-top: 0.5rem; font-size: 0.9rem;">Luanda, Angola</div>
+                        </div>
+                        <div class="forecast">
+                            <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">3-Day Forecast</h4>
+                            ${mockForecast.list.slice(0, 3).map((day, index) => {
+                                const date = new Date();
+                                date.setDate(date.getDate() + index + 1);
+                                const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                                return `
+                                    <div class="forecast-day">
+                                        <span>${dayName}</span>
+                                        <span>${Math.round(day.main.temp)}°C</span>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                weatherContainer.innerHTML = '<div class="error">Unable to load weather data</div>';
+                console.error('Weather loading error:', error);
+            }
+        }
+
+        // Function to update last modified date
+        function updateLastModified() {
+            const lastModifiedElement = document.getElementById('lastModified');
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            lastModifiedElement.textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Initialize page content when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSpotlights();
+            loadWeather();
+            updateLastModified();
+        });
+
+        
+        setInterval(loadSpotlights, 30000);
+    </script>
 </body>
 </html>
