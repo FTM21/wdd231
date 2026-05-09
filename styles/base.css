@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #222;
+  }
+  
+  /* HEADER */
+  header {
+    background: #0b2d4d;
+    color: white;
+  }
+  
+  .header-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo img {
+    width: 60px;
+    border-radius: 8px;
+  }
+  
+  #menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    margin-top: 1rem;
+  }
+  
+  #menu::before {
+    content: "☰";
+  }
+  
+  #menu.open::before {
+    content: "✖";
+  }
+  
+  /* NAV */
+  .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navigation a {
+    display: none;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    background: #145a8d;
+  }
+  
+  .navigation.open a {
+    display: block;
+  }
+  
+  /* MAIN */
+  main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  /* CARDS */
+  .cards {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card h2 {
+    margin-bottom: 1rem;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    background: #0b2d4d;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+  }

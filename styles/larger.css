@@ -1,0 +1,25 @@
+@media screen and (min-width: 768px) {
+
+    #menu {
+      display: none;
+    }
+  
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navigation {
+      flex-direction: row;
+    }
+  
+    .navigation a {
+      display: block;
+      background: none;
+    }
+  
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
