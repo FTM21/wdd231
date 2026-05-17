@@ -1,0 +1,78 @@
+{
+    "companies": [
+      {
+        "name": "Banque de Luxembourg",
+        "address": "14 Boulevard Royal, L-2449 Luxembourg",
+        "phone": "+352 49 14 1",
+        "website": "https://www.banquedeluxembourg.com",
+        "image": "banquelux.png",
+        "membershipLevel": 3,
+        "description": "Leading private bank offering wealth management and financial services since 1920."
+      },
+      {
+        "name": "Luxair",
+        "address": "Luxembourg Airport, L-2987 Luxembourg",
+        "phone": "+352 24 56 1",
+        "website": "https://www.luxair.lu",
+        "image": "luxair.png",
+        "membershipLevel": 3,
+        "description": "Luxembourg's national airline connecting Europe with comfort and reliability."
+      },
+      {
+        "name": "ArcelorMittal Luxembourg",
+        "address": "24-26 Boulevard d'Avranches, L-1160 Luxembourg",
+        "phone": "+352 47 92 1",
+        "website": "https://luxembourg.arcelormittal.com",
+        "image": "arcelormittal.png",
+        "membershipLevel": 3,
+        "description": "World's leading steel and mining company with deep roots in Luxembourg."
+      },
+      {
+        "name": "Cactus S.A.",
+        "address": "20 Rue Henri Koch, L-4354 Esch-sur-Alzette",
+        "phone": "+352 54 55 1",
+        "website": "https://www.cactus.lu",
+        "image": "cactus.png",
+        "membershipLevel": 2,
+        "description": "Luxembourg's largest grocery retail chain, serving communities since 1967."
+      },
+      {
+        "name": "POST Luxembourg",
+        "address": "38 Rue de la Gare, L-1616 Luxembourg",
+        "phone": "+352 24 07 1",
+        "website": "https://www.post.lu",
+        "image": "postlux.png",
+        "membershipLevel": 2,
+        "description": "National postal and telecommunications provider for Luxembourg."
+      },
+      {
+        "name": "Luxembourg Tech Hub",
+        "address": "9 Rue du Laboratoire, L-1911 Luxembourg",
+        "phone": "+352 27 48 17 1",
+        "website": "https://www.luxembourgtechhub.com",
+        "image": "luxhub.png",
+        "membershipLevel": 2,
+        "description": "Innovation center supporting startups and digital transformation in Luxembourg."
+      },
+      {
+        "name": "Chocolate House Nathalie Bonn",
+        "address": "20 Rue du Marché-aux-Herbes, L-1728 Luxembourg",
+        "phone": "+352 26 86 01 81",
+        "website": "https://www.chocolate.lu",
+        "image": "chocohouse.png",
+        "membershipLevel": 1,
+        "description": "Artisan chocolate shop crafting premium Luxembourgish chocolates since 2005."
+      },
+      {
+        "name": "Le Sud Restaurant",
+        "address": "15 Rue des Bains, L-1212 Luxembourg",
+        "phone": "+352 26 20 15 98",
+        "website": "https://www.lesud.lu",
+        "image": "le-sud.png",
+        "membershipLevel": 1,
+        "description": "Award-winning Luxembourgish-French fusion cuisine in the heart of the city."
+      }
+    ]
+  }
+  
+  
