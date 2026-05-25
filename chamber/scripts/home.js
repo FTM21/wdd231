@@ -55,6 +55,7 @@ async function loadWeather() {
   const weatherEl = document.getElementById('weather-content');
   if (!weatherEl) return;
 
+  // Demo/fallback data when no real API key is provided
   if (OWM_API_KEY === 'YOUR_OPENWEATHERMAP_API_KEY') {
     renderWeatherDemo(weatherEl);
     return;
@@ -66,6 +67,7 @@ async function loadWeather() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${CITY_COORDS.lat}&lon=${CITY_COORDS.lon}&units=${OWM_UNITS}&appid=${OWM_API_KEY}`
     );
 
+    // 5-day forecast
     const forecastRes = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${CITY_COORDS.lat}&lon=${CITY_COORDS.lon}&units=${OWM_UNITS}&appid=${OWM_API_KEY}`
     );
@@ -258,6 +260,8 @@ function renderSpotlightCard(member) {
   `;
 }
 
-
+// ═══════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════
 loadWeather();
 loadSpotlights();
