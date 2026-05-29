@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Luxembourg Chamber of Commerce — Choose a membership level and become part of the Grand Duchy's premier business network.">
+  <meta name="author" content="Francisca Maxinho">
+  <title>Join | Luxembourg Chamber of Commerce</title>
+  <link rel="stylesheet" href="chamber/styles/chamber.css">
+  <style>
+    /* ══════════════════════════════════════
+       JOIN PAGE STYLES
+       ══════════════════════════════════════ */
+
+    /* Page Hero Banner */
+    .page-hero {
+      background: var(--clr-dark);
+      color: var(--clr-white);
+      padding: 3rem 1.25rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(0,163,224,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+    .page-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Join Layout */
+    .join-layout {
+      max-width: var(--max-width);
+      margin: 2.5rem auto;
+      padding: 0 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    /* ── Form Card ── */
+    .form-card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border-top: 4px solid var(--clr-red);
+    }
+    .form-card .section-title { margin-bottom: 1.5rem; }
+
+    /* Form Groups */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--clr-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .form-group label .req {
+      color: var(--clr-red);
+      font-size: 0.9rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--clr-text);
+      background: var(--clr-bg);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.9rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--clr-blue);
+      box-shadow: 0 0 0 3px rgba(0,163,224,0.15);
+    }
+    .form-group input:invalid:not(:placeholder-shown) {
+      border-color: var(--clr-red);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--clr-muted);
+      margin-top: 1px;
+    }
+
+    /* Submit Button */
+    .form-submit {
+      margin-top: 1.5rem;
+      text-align: right;
+    }
+    .btn-submit {
+      background: var(--clr-red);
+      color: var(--clr-white);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem 2.2rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      letter-spacing: 0.3px;
+    }
+    .btn-submit:hover {
+      background: var(--clr-red-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(239,51,64,0.35);
+    }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* ── Membership Cards ── */
+    .membership-section { }
+
+    .membership-section .section-title { margin-bottom: 0.5rem; }
+    .membership-section > p {
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .membership-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    /* Card Animation on page load */
+    @keyframes cardSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .membership-card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--clr-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      position: relative;
+      opacity: 0;
+      /* staggered animation applied via nth-child */
+      animation: cardSlideIn 0.5s ease forwards;
+    }
+    .membership-card:nth-child(1) { animation-delay: 0.1s; }
+    .membership-card:nth-child(2) { animation-delay: 0.25s; }
+    .membership-card:nth-child(3) { animation-delay: 0.4s; }
+    .membership-card:nth-child(4) { animation-delay: 0.55s; }
+
+    .membership-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--clr-blue);
+      transform: translateY(-2px);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    /* level accent lines */
+    .membership-card.np    { border-top-color: #6b7280; }
+    .membership-card.bronze { border-top-color: #cd7f32; }
+    .membership-card.silver { border-top-color: var(--clr-silver); }
+    .membership-card.gold   { border-top-color: var(--clr-gold); }
+
+    .card-level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      align-self: flex-start;
+    }
+    .membership-card.np    .card-level-badge { background: rgba(107,114,128,0.1); color: #4b5563; border: 1px solid rgba(107,114,128,0.3); }
+    .membership-card.bronze .card-level-badge { background: rgba(205,127,50,0.12); color: #9a5c1a; border: 1px solid rgba(205,127,50,0.35); }
+    .membership-card.silver .card-level-badge { background: rgba(138,143,154,0.12); color: var(--clr-silver); border: 1px solid rgba(138,143,154,0.3); }
+    .membership-card.gold   .card-level-badge { background: rgba(201,168,76,0.15); color: #8a6c1c; border: 1px solid rgba(201,168,76,0.35); }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+    }
+    .card-fee {
+      font-size: 0.82rem;
+      color: var(--clr-muted);
+    }
+    .card-fee strong {
+      color: var(--clr-text);
+      font-weight: 600;
+    }
+    .card-info-link {
+      margin-top: auto;
+      align-self: flex-start;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--clr-blue);
+      background: none;
+      border: 1px solid var(--clr-blue);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.9rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      font-family: var(--font-body);
+    }
+    .card-info-link:hover {
+      background: var(--clr-blue);
+      color: var(--clr-white);
+      text-decoration: none;
+    }
+
+    /* ══════════════════════════════════════
+       MODALS
+       ══════════════════════════════════════ */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,31,46,0.65);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-box {
+      background: var(--clr-surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      animation: modalIn 0.22s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.94) translateY(10px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--clr-muted);
+      line-height: 1;
+      transition: color var(--transition);
+    }
+    .modal-close:hover { color: var(--clr-dark); }
+
+    .modal-level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    .modal-box.np    .modal-level-badge { background: rgba(107,114,128,0.1); color: #4b5563; border: 1px solid rgba(107,114,128,0.3); }
+    .modal-box.bronze .modal-level-badge { background: rgba(205,127,50,0.12); color: #9a5c1a; border: 1px solid rgba(205,127,50,0.35); }
+    .modal-box.silver .modal-level-badge { background: rgba(138,143,154,0.12); color: var(--clr-silver); border: 1px solid rgba(138,143,154,0.3); }
+    .modal-box.gold   .modal-level-badge { background: rgba(201,168,76,0.15); color: #8a6c1c; border: 1px solid rgba(201,168,76,0.35); }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+      margin-bottom: 1rem;
+    }
+    .modal-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .modal-benefits li {
+      font-size: 0.9rem;
+      color: var(--clr-text);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .modal-benefits li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--clr-blue);
+      font-weight: 700;
+    }
+    .modal-fee-note {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--clr-border);
+      font-size: 0.82rem;
+      color: var(--clr-muted);
+    }
+    .modal-fee-note strong { color: var(--clr-dark); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE LAYOUT – Desktop ≥700px
+       ══════════════════════════════════════ */
+    @media (min-width: 700px) {
+      .join-layout {
+        grid-template-columns: 1fr 340px;
+        align-items: start;
+      }
+      /* Form first on desktop too, cards on right */
+      .form-card { order: 1; }
+      .membership-section { order: 2; }
+
+      .membership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 699px) {
+      /* On small screens: form first, cards below */
+      .form-card { order: 1; }
+      .membership-section { order: 2; }
+      .membership-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 499px) {
+      .membership-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+
+      <div class="site-brand">
+        <div class="brand-flag" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Luxembourg CoC</span>
+          <span class="brand-tagline">Chamber of Commerce</span>
+        </div>
+      </div>
+
+      <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="flag-stripe" aria-hidden="true">
+    <div></div><div></div><div></div>
+  </div>
+
+  <div class="page-hero">
+    <h1>Join the Chamber</h1>
+    <p>Become part of Luxembourg's most influential business network. Choose the membership that fits your organisation.</p>
+  </div>
+
+  <main>
+    <div class="join-layout">
+
+      <!-- ════════════════ APPLICATION FORM ════════════════ -->
+      <section class="form-card" aria-labelledby="form-heading">
+        <h2 class="section-title" id="form-heading">Membership Application</h2>
+
+        <form method="get" action="thankyou.html" novalidate>
+
+          <!-- Name row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">
+                First Name <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                title="Applicant's first name"
+                autocomplete="given-name"
+                required
+                placeholder="e.g. Marie">
+            </div>
+            <div class="form-group">
+              <label for="lname">
+                Last Name <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                title="Applicant's last name"
+                autocomplete="family-name"
+                required
+                placeholder="e.g. Schmit">
+            </div>
+          </div>
+
+          <!-- Org title -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="org-title">Organisational Title</label>
+              <input
+                type="text"
+                id="org-title"
+                name="org-title"
+                title="Applicant's title within their organisation"
+                autocomplete="organization-title"
+                pattern="[A-Za-z\- ]{7,}"
+                placeholder="e.g. Director General">
+              <span class="form-hint">Minimum 7 characters — letters, hyphens, and spaces only.</span>
+            </div>
+          </div>
+
+          <!-- Email & Phone row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">
+                Email Address <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                title="Applicant's email address"
+                autocomplete="email"
+                required
+                placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">
+                Mobile Phone <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                title="Applicant's mobile phone number"
+                autocomplete="tel"
+                required
+                placeholder="+352 621 000 000">
+            </div>
+          </div>
+
+          <!-- Organisation name -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="org-name">
+                Business / Organisation Name <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="org-name"
+                name="org-name"
+                title="Name of the applicant's business or organisation"
+                autocomplete="organization"
+                required
+                placeholder="e.g. Société Générale Luxembourg">
+            </div>
+          </div>
+
+          <!-- Membership level -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="membership-level">
+                Membership Level <span class="req" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="membership-level"
+                name="membership-level"
+                title="Desired membership level"
+                required>
+                <option value="" disabled selected>— Select a level —</option>
+                <option value="np">NP Membership (Non-Profit — No Fee)</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="description">
+                Business / Organisation Description
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                title="Brief description of the business or organisation"
+                placeholder="Tell us about your organisation, its mission, and what you hope to gain from Chamber membership…"></textarea>
+            </div>
+          </div>
+
+          <!-- Hidden timestamp -->
+          <input
+            type="hidden"
+            id="timestamp"
+            name="timestamp">
+
+          <div class="form-submit">
+            <input
+              type="submit"
+              class="btn-submit"
+              value="Submit Application">
+          </div>
+
+        </form>
+      </section>
+
+      <!-- ════════════════ MEMBERSHIP CARDS ════════════════ -->
+      <aside class="membership-section" aria-labelledby="membership-heading">
+        <h2 class="section-title" id="membership-heading">Membership Levels</h2>
+        <p>Click any card to learn about the benefits.</p>
+
+        <div class="membership-grid">
+
+          <!-- NP Card -->
+          <article class="membership-card np" aria-label="NP Membership">
+            <span class="card-level-badge">NP</span>
+            <div class="card-title">NP Membership</div>
+            <p class="card-fee">For <strong>non-profit organisations</strong> — No annual fee.</p>
+            <button
+              class="card-info-link"
+              aria-haspopup="dialog"
+              aria-controls="modal-np"
+              onclick="openModal('modal-np')">
+              View Benefits
+            </button>
+          </article>
+
+          <!-- Bronze Card -->
+          <article class="membership-card bronze" aria-label="Bronze Membership">
+            <span class="card-level-badge">Bronze</span>
+            <div class="card-title">Bronze Membership</div>
+            <p class="card-fee">Entry-level business membership.</p>
+            <button
+              class="card-info-link"
+              aria-haspopup="dialog"
+              aria-controls="modal-bronze"
+              onclick="openModal('modal-bronze')">
+              View Benefits
+            </button>
+          </article>
+
+          <!-- Silver Card -->
+          <article class="membership-card silver" aria-label="Silver Membership">
+            <span class="card-level-badge">Silver</span>
+            <div class="card-title">Silver Membership</div>
+            <p class="card-fee">Enhanced visibility and networking access.</p>
+            <button
+              class="card-info-link"
+              aria-haspopup="dialog"
+              aria-controls="modal-silver"
+              onclick="openModal('modal-silver')">
+              View Benefits
+            </button>
+          </article>
+
+          <!-- Gold Card -->
+          <article class="membership-card gold" aria-label="Gold Membership">
+            <span class="card-level-badge">Gold</span>
+            <div class="card-title">Gold Membership</div>
+            <p class="card-fee">Premier partnership with maximum exposure.</p>
+            <button
+              class="card-info-link"
+              aria-haspopup="dialog"
+              aria-controls="modal-gold"
+              onclick="openModal('modal-gold')">
+              View Benefits
+            </button>
+          </article>
+
+        </div>
+      </aside>
+
+    </div><!-- /.join-layout -->
+  </main>
+
+  <!-- ════════════════════════════
+       MODALS
+  ════════════════════════════ -->
+
+  <!-- NP Modal -->
+  <div class="modal-backdrop" id="modal-np" role="dialog" aria-modal="true" aria-labelledby="modal-np-title">
+    <div class="modal-box np">
+      <button class="modal-close" onclick="closeModal('modal-np')" aria-label="Close modal">&#x2715;</button>
+      <span class="modal-level-badge">NP Membership</span>
+      <h3 class="modal-title" id="modal-np-title">Non-Profit Membership Benefits</h3>
+      <ul class="modal-benefits">
+        <li>Chamber membership listing in the online directory</li>
+        <li>Access to networking events at no extra charge</li>
+        <li>Monthly business newsletter subscription</li>
+        <li>Participation in community outreach programmes</li>
+        <li>Access to Chamber's meeting rooms (booking required)</li>
+        <li>Collaboration opportunities with corporate members</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee:</strong> No fee — open to registered non-profit organisations in the Grand Duchy.</p>
+    </div>
+  </div>
+
+  <!-- Bronze Modal -->
+  <div class="modal-backdrop" id="modal-bronze" role="dialog" aria-modal="true" aria-labelledby="modal-bronze-title">
+    <div class="modal-box bronze">
+      <button class="modal-close" onclick="closeModal('modal-bronze')" aria-label="Close modal">&#x2715;</button>
+      <span class="modal-level-badge">Bronze Membership</span>
+      <h3 class="modal-title" id="modal-bronze-title">Bronze Membership Benefits</h3>
+      <ul class="modal-benefits">
+        <li>Full directory listing with logo and contact details</li>
+        <li>Invitation to all Chamber networking events</li>
+        <li>10% discount on Chamber-organised training courses</li>
+        <li>Monthly newsletter and weekly business digest</li>
+        <li>Access to Chamber's legal and regulatory helpdesk</li>
+        <li>One free seat at the Annual Business Forum</li>
+        <li>Business card exchange at quarterly mixers</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee:</strong> Contact the Chamber for current pricing.</p>
+    </div>
+  </div>
+
+  <!-- Silver Modal -->
+  <div class="modal-backdrop" id="modal-silver" role="dialog" aria-modal="true" aria-labelledby="modal-silver-title">
+    <div class="modal-box silver">
+      <button class="modal-close" onclick="closeModal('modal-silver')" aria-label="Close modal">&#x2715;</button>
+      <span class="modal-level-badge">Silver Membership</span>
+      <h3 class="modal-title" id="modal-silver-title">Silver Membership Benefits</h3>
+      <ul class="modal-benefits">
+        <li>All Bronze benefits included</li>
+        <li>Featured listing on Chamber homepage (rotating spotlight)</li>
+        <li>20% discount on training programmes and workshops</li>
+        <li>Priority invitations to exclusive finance and policy roundtables</li>
+        <li>Logo placement in Chamber publications and reports</li>
+        <li>Two free seats at the Annual Business Forum</li>
+        <li>Access to member-only market intelligence reports</li>
+        <li>Dedicated Chamber liaison officer</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee:</strong> Contact the Chamber for current pricing.</p>
+    </div>
+  </div>
+
+  <!-- Gold Modal -->
+  <div class="modal-backdrop" id="modal-gold" role="dialog" aria-modal="true" aria-labelledby="modal-gold-title">
+    <div class="modal-box gold">
+      <button class="modal-close" onclick="closeModal('modal-gold')" aria-label="Close modal">&#x2715;</button>
+      <span class="modal-level-badge">Gold Membership</span>
+      <h3 class="modal-title" id="modal-gold-title">Gold Membership Benefits</h3>
+      <ul class="modal-benefits">
+        <li>All Silver benefits included</li>
+        <li>Permanent spotlight on Chamber homepage</li>
+        <li>Co-branding on Chamber event materials and banners</li>
+        <li>30% discount on all training, events, and workshops</li>
+        <li>Complimentary table (8 seats) at the Annual Gala Dinner</li>
+        <li>Four free seats at the Annual Business Forum</li>
+        <li>Inclusion in all press releases and Chamber media</li>
+        <li>Priority speaking slots at Chamber events</li>
+        <li>Direct access to Chamber lobbying and policy team</li>
+        <li>Exclusive invitations to government receptions and EU briefings</li>
+      </ul>
+      <p class="modal-fee-note"><strong>Annual Fee:</strong> Contact the Chamber for current pricing.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════
+       FOOTER
+  ════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="site-brand">
+          <div class="brand-flag" aria-hidden="true" style="width:22px;height:16px;">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="brand-name">Luxembourg CoC</span>
+        </div>
+        <p>
+          7 Rue Alcide de Gasperi<br>
+          L-2981 Luxembourg City<br>
+          +352 42 39 39 1<br>
+          <a href="mailto:info@cc.lu" style="color:rgba(255,255,255,0.5);">info@cc.lu</a>
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://www.gouvernement.lu/en.html" target="_blank" rel="noopener">Government</a></li>
+          <li><a href="https://www.visitluxembourg.com" target="_blank" rel="noopener">Visit Luxembourg</a></li>
+          <li><a href="https://www.eurostat.ec.europa.eu" target="_blank" rel="noopener">Eurostat</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; <span id="currentyear"></span> Luxembourg Chamber of Commerce &nbsp;|&nbsp;
+        Francisca Maxinho &nbsp;|&nbsp; WDD 231
+      </p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Footer ──
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent =
+      'Last Modified: ' + document.lastModified;
+
+    // ── Hamburger ──
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    // ── Hidden timestamp ──
+    document.getElementById('timestamp').value = new Date().toLocaleString();
+
+    // ── Modal helpers ──
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('open');
+      // Focus close button for keyboard accessibility
+      el.querySelector('.modal-close').focus();
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('open');
+    }
+
+    // Close on backdrop click
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', e => {
+        if (e.target === backdrop) {
+          backdrop.classList.remove('open');
+        }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>
