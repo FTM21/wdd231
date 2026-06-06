@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the beautiful landscapes, rich demographics, and legendary landmarks of Luxembourg. Perfect for business travelers and visitors alike.">
+  <meta name="author" content="Francisca Maxinho">
+  <title>Luxembourg Chamber of Commerce | Discover</title>
+  <link rel="stylesheet" href="chamber/styles/chamber.css">
+  <link rel="stylesheet" href="chamber/styles/discover.css">
+  <script src="chamber/scripts/discover.js" type="module" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="brand-flag" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Luxembourg CoC</span>
+          <span class="brand-tagline">Chamber of Commerce</span>
+        </div>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html" aria-current="page">Discover</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="discover-hero">
+      <h1>Discover Luxembourg</h1>
+      <p>A thriving economic powerhouse blended with thousands of years of historical European culture.</p>
+    </div>
+
+    <div id="visit-message" class="visit-message" aria-live="polite"></div>
+
+    <div class="discover-container">
+      <aside class="sidebar-info">
+        <div class="sidebar-card">
+          <h2>Region Demographics</h2>
+          <ul>
+            <li><strong>Population:</strong> ~660,000</li>
+            <li><strong>Official Languages:</strong> Luxembourgish, French, German</li>
+            <li><strong>Capital:</strong> Luxembourg City</li>
+            <li><strong>GDP per Capita:</strong> Highest in the EU</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h2>Why Invest Here?</h2>
+          <p>Positioned neatly in the heart of Europe, Luxembourg offers unparalleled financial stability, an international open workforce, and a phenomenal quality of living for families and growing companies alike.</p>
+        </div>
+      </aside>
+
+      <section id="discover-grid" class="discover-grid">
+        </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="site-brand">
+          <div class="brand-flag" aria-hidden="true" style="width:22px;height:16px;">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="brand-name">Luxembourg CoC</span>
+        </div>
+        <p>7 Rue Alcide de Gasperi<br>L-2981 Luxembourg City<br>+352 42 39 39 1</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentyear"></span> Luxembourg Chamber of Commerce | Francisca Maxinho | Luxembourg</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <script src="chamber/scripts/home.js" defer></script>
+</body>
+</html>
