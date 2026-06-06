@@ -1,0 +1,180 @@
+/* ==========================================
+   CSS SITE PALETTE & TYPOGRAPHY STYLE CONFIG
+   ========================================== */
+
+   :root {
+    --primary-color: #1a365d;   /* Deep Navy Blue: For headers, banners, branding structure */
+    --secondary-color: #2b6cb0; /* Steel Blue: For internal subheadings and layout frames */
+    --accent-color: #b7791f;    /* Amber Gold: Contrast-safe tone optimized for actions/highlights */
+    --text-color: #2d3748;      /* Charcoal Gray: Highly legible tone for standard reading text */
+    --bg-color: #f7fafc;        /* Light Slate Tint: Soft page background to decrease glare */
+    --card-bg: #ffffff;         /* Pure White: For readable text card sections */
+    --border-color: #e2e8f0;    /* Muted Border Gray */
+}
+
+/* Base Adjustments */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Banner Layout */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--accent-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+
+.author-tag {
+    margin: 8px 0 0 0;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    font-style: italic;
+}
+
+/* Structural Main Container Layout */
+main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5em;
+}
+
+/* Unordered Lists styling */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+/* Performance Callout Utility classes */
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* User Journey Scenario Layout Boxes */
+.scenario-box {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 0 6px 6px 0;
+}
+
+.scenario-box p {
+    margin: 0;
+}
+
+.scenario-box .question {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.scenario-box .answer {
+    font-size: 1rem;
+}
+
+/* Visual Color Swatch Utilities */
+.swatch {
+    display: inline-block;
+    width: 24px;
+    height: 14px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid #cbd5e0;
+}
+
+.sw-primary { background-color: var(--primary-color); }
+.sw-secondary { background-color: var(--secondary-color); }
+.sw-accent { background-color: var(--accent-color); }
+.sw-text { background-color: var(--text-color); }
+.sw-bg { background-color: var(--bg-color); }
+
+/* Responsive Grid Configuration for Wireframe Cards */
+.wireframe-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.wireframe-card {
+    flex: 1;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+}
+
+.wireframe-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+}
+
+svg {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Viewport Adjustments */
+@media (min-width: 768px) {
+    .wireframe-flex-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .wireframe-card svg {
+        max-width: 100%;
+    }
+}
