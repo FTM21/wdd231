@@ -1,118 +1,241 @@
+.page-hero {
+  background-color: #111520; /* Deep charcoal for heavy white-text contrast */
+  color: var(--clr-white, #ffffff);
+  padding: 3.5rem 1.25rem 3rem;
+  text-align: center;
+}
 
-/* ── JOIN HEADER ── */  
-.join-header {  
-    background: var(--clr-dark);  
-    color: var(--clr-white);  
-    padding: 2.5rem 1.25rem;  
-    text-align: center;  
-  }  
-  .join-header h1 {  
-    font-family: var(--font-display);  
-    font-size: 2.2rem;  
-    font-weight: 700;  
-    margin-bottom: 0.5rem;  
-  }  
-  .join-header p {  
-    color: rgba(255,255,255,0.65);  
-    font-size: 0.95rem;  
-  }  
-  
-  /* ── JOIN LAYOUT ── */  
-  .join-layout {  
-    display: grid;  
-    grid-template-columns: 1fr;  
-    gap: 2rem;  
-    padding: 2rem 1.25rem;  
-    max-width: var(--max-width);  
-    margin: 0 auto;  
-  }  
-  
-  /* ── FORM ── */  
-  .join-form-section { order: 2; }  
-  
-  .join-form {  
-    background: var(--clr-surface);  
-    border-radius: var(--radius-md);  
-    padding: 1.75rem;  
-    box-shadow: var(--shadow-sm);  
-    border: 1px solid var(--clr-border);  
-  }  
-  .join-form fieldset { border: none; padding: 0; margin: 0; }  
-  .join-form legend {  
-    font-family: var(--font-display);  
-    font-size: 1.3rem;  
-    font-weight: 700;  
-    color: var(--clr-dark);  
-    margin-bottom: 1.25rem;  
-    padding-bottom: 0.5rem;  
-    border-bottom: 2px solid var(--clr-red);  
-    width: 100%;  
-  }  
-  
-  .form-group { margin-bottom: 1.15rem; }  
-  
-  .form-group label {  
-    display: flex;  
-    flex-direction: column;  
-    gap: 0.3rem;  
-    font-size: 0.88rem;  
-    font-weight: 600;  
-    color: var(--clr-dark);  
-  }  
-  .form-group label span.req { color: var(--clr-red); }  
-  
-  .form-group input,  
-  .form-group textarea,  
-  .form-group select {  
-    font-family: var(--font-body);  
-    font-size: 0.95rem;  
-    padding: 0.6rem 0.75rem;  
-    border: 1px solid var(--clr-border);  
-    border-radius: var(--radius-sm);  
-    background: var(--clr-bg);  
-    color: var(--clr-text);  
-    width: 100%;  
-    transition: border-color var(--transition), box-shadow var(--transition);  
-  }  
-  .form-group input:focus,  
-  .form-group textarea:focus,  
-  .form-group select:focus {  
-    outline: none;  
-    border-color: var(--clr-blue);  
-    box-shadow: 0 0 0 3px rgba(0,163,224,0.15);  
-  }  
-  .form-group textarea { min-height: 100px; resize: vertical; }  
-  
-  .submit-btn {  
-    font-family: var(--font-body);  
-    font-size: 1rem;  
-    font-weight: 600;  
-    background: var(--clr-red);  
-    color: var(--clr-white);  
-    border: none;  
-    border-radius: var(--radius-sm);  
-    padding: 0.75rem 1.5rem;  
-    cursor: pointer;  
-    width: 100%;  
-    transition: background var(--transition), transform var(--transition);  
-  }  
-  .submit-btn:hover {  
-    background: var(--clr-red-dark);  
-    transform: translateY(-1px);  
-  }  
-  .submit-btn:focus {  
-    outline: 2px solid var(--clr-blue);  
-    outline-offset: 2px;  
-  }  
-  
-  /* ── MEMBERSHIP CARDS ── */  
-  .membership-cards-section { order: 1; }  
-  .membership-cards-section h2 { margin-bottom: 1.25rem; }  
-  
-  .cards-grid {  
-    display: grid;  
-    grid-template-columns: 1fr;  
-    gap: 1rem;  
-  }  
-  
-  .members
+.page-hero h1 {
+  font-family: var(--font-display, serif);
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  color: #e2e8f0; /* Crisp light grey passing contrast guidelines */
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── LAYOUT ── */
+.join-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 3rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 850px) {
+  .join-layout {
+    grid-template-columns: 1.6fr 1fr;
+  }
+}
+
+/* ── FORM ELEMENTS & AA VALIDATION ── */
+.join-form {
+  background: #ffffff;
+  border: 2px solid #cbd5e1; /* Clear high contrast form border boundaries */
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: #1a1f2e; /* Dark slate text */
+  font-family: var(--font-display, serif);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #ef3340;
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.35rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #1a1f2e; /* Compliant high contrast text color */
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.form-group label .req {
+  color: #ef3340; /* High contrast warning red label star symbol */
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.7rem;
+  border: 2px solid #718096; /* Enhanced contrast gray input borders */
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1a1f2e;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 3px solid #006699; /* Clear accessibility highlight focus halo rings */
+  border-color: #006699;
+}
+
+.form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Red button contrast boost */
+.submit-btn {
+  background-color: #d91421; /* Rich deep red passing over crisp white backgrounds */
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #9e0b14;
+}
+
+/* ── SIDEBAR CARDS & ACCESSIBLE TRIGGER LINK CONTRAST ── */
+.benefits-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tier-card {
+  background: #f8fafc;
+  border-left: 5px solid #718096;
+  border-top: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.tier-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1f2e;
+  font-size: 1.2rem;
+}
+
+.tier-card p {
+  color: #334155; /* AAA Compliant body grey contrast color */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
+/* Accessible High Contrast triggers replacing low contrast elements */
+.info-link {
+  background: none;
+  border: none;
+  color: #005580; /* Perfect High-Contrast structural link blue */
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.info-link:hover,
+.info-link:focus {
+  color: #002b40;
+}
+
+/* Gold, Silver, Bronze specific tier branding trims */
+.np-tier { border-left-color: #718096; }
+.gold-tier { border-left-color: #aa841e; }
+.silver-tier { border-left-color: #5a616b; }
+.bronze-tier { border-left-color: #8c593b; }
+
+/* ── MODALS (ACCESSIBILITY AND AUDIT OPTIMIZATION) ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.85); /* Heavy backdrop overlay to maximize visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  transform: translateY(-20px);
+  transition: transform 0.25s ease;
+}
+
+.modal-backdrop.open .modal-content {
+  transform: translateY(0);
+}
+
+.modal-content h3 {
+  color: #1a1f2e;
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+}
+
+.modal-content p {
+  color: #2d3748;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.modal-close {
+  background-color: #2d3748;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: #1a1f2e;
+  outline: 2px solid #ef3340;
+}
+
+/* Footer Link Enhancements for Color Audit */
+.footer-email {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+.footer-email:hover {
+  color: #e2e8f0 !important;
+}
