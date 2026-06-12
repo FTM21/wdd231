@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Readiness Evaluation | GTC Diagnostic</title>
+    <meta name="description" content="Evaluate your operations across compliance tracks, supply chain stability matrices, and local storage state evaluations.">
+    <meta name="author" content="Francisca Maxinho">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/site-plan.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-block">
+                <span class="logo-text">Global Trade Center <span class="logo-accent">(GTC)</span></span>
+            </div>
+            <button id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav id="primaryNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="quiz.html" class="nav-link active" aria-current="page">Readiness Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="quiz-interface-card" style="background: #ffffff; border: 1px solid var(--border-color); padding: 35px; border-radius: 8px; max-width: 800px; margin: 0 auto;">
+            <h1>Operational Export Readiness Evaluation</h1>
+            <p>This assessment records tracking metrics dynamically inside your browser client using **Local Storage**. Complete the core operational categories below to compile your strategic score profile.</p>
+            
+            <div id="quizTelemetryBlock" style="background: #edf2f7; padding: 15px; border-radius: 4px; margin-bottom: 25px; font-weight: 600; color: var(--primary-color);">
+                Loading local evaluation session telemetry...
+            </div>
+
+            <form action="review.html" method="GET" id="readinessQuizForm">
+                
+                <fieldset style="border: 1px solid var(--border-color); padding: 20px; margin-bottom: 25px; border-radius: 6px;">
+                    <legend style="padding: 0 10px; font-weight: 700; color: var(--secondary-color);">Track A: Tariff Classification & Compliance Accuracy</legend>
+                    
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>1. Does your organization possess verified 10-digit HTS code records for all primary inventory assets?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="hts_readiness" value="fully_documented" required> Yes, fully integrated and audited.</label>
+                            <label><input type="radio" name="hts_readiness" value="partial"> Partial 6-digit classification baseline only.</label>
+                            <label><input type="radio" name="hts_readiness" value="none"> No structured tariff codes assigned.</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="border: 1px solid var(--border-color); padding: 20px; margin-bottom: 25px; border-radius: 6px;">
+                    <legend style="padding: 0 10px; font-weight: 700; color: var(--secondary-color);">Track B: Rules of Origin Certification Protocols</legend>
+                    
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>2. Can your production line cleanly isolate raw materials to satisfy preferential Rules of Origin declarations?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="roo_readiness" value="verifiable" required> Yes, supply chains are fully traceable.</label>
+                            <label><input type="radio" name="roo_readiness" value="unverified"> Processing occurs but records are unverified.</label>
+                            <label><input type="radio" name="roo_readiness" value="ineligible"> Materials do not meet origin thresholds.</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="border: 1px solid var(--border-color); padding: 20px; margin-bottom: 25px; border-radius: 6px;">
+                    <legend style="padding: 0 10px; font-weight: 700; color: var(--secondary-color);">Track C: Financial Compliance & Financial Security</legend>
+                    
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>3. Are cross-border remittance mechanisms audited against current AML/CFT regulatory requirements?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="aml_readiness" value="compliant" required> Yes, fully integrated compliance systems active.</label>
+                            <label><input type="radio" name="aml_readiness" value="basic"> Basic commercial banking screening filters applied.</label>
+                            <label><input type="radio" name="aml_readiness" value="unreviewed"> Processing channels are currently unreviewed.</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="submit-button" id="submitEvaluationBtn">Submit Evaluation for Processing</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Global Trade Center (GTC) Portal. All Rights Reserved.</p>
+            <p class="author-attribution">Developed by: Francisca Maxinho | Senior Trade Advisory Consultant</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" class="footer-link">Resource Attributions</a> | 
+                <a href="https://youtu.be/example-link" target="_blank" class="footer-link video-link">Project Video Demonstration</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

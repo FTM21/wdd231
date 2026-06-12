@@ -1,204 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luxembourg Chamber of Commerce — Strengthening business, fostering growth, and connecting the Grand Duchy's business community since 1841.">
-  <meta name="author" content="Francisca Maxinho">
-  <title>Luxembourg Chamber of Commerce | Home</title>
-  <link rel="stylesheet" href="chamber/styles/chamber.css">
-  <link rel="stylesheet" href="chamber/styles/join.css">
-  <script src="chamber/scripts/home.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Trade Center (GTC) | Export Readiness Portal</title>
+    
+    <meta name="description" content="The Global Trade Center (GTC) is a comprehensive Export Readiness Portal designed to help small and medium enterprises (SMEs) evaluate operations and discover structured international trade pathways.">
+    <meta name="author" content="Francisca Maxinho">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Global Trade Center (GTC) - Export Readiness Portal">
+    <meta property="og:description" content="Evaluate your business operations, explore ITC training modules, and navigate EU Access2Markets compliance guidelines seamlessly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/franciscamaxinho/wdd231/finalproject/index.html">
+    <meta property="og:image" content="images/gtc-og-banner.webp">
+
+    <link rel="stylesheet" href="css/site-plan.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-
-      <div class="site-brand">
-        <div class="brand-flag" aria-hidden="true">
-          <span></span><span></span><span></span>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-block">
+                <span class="logo-text">Global Trade Center <span class="logo-accent">(GTC)</span></span>
+            </div>
+            <button id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav id="primaryNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="quiz.html" class="nav-link">Readiness Quiz</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="brand-text">
-          <span class="brand-name">Luxembourg CoC</span>
-          <span class="brand-tagline">Chamber of Commerce</span>
+    </header>
+
+    <main id="mainContent">
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Are You Ready for International Export Trade?</h1>
+                <p>Bridge the structural gaps in your supply chain, evaluate compliance vulnerabilities, and scale your operations systematically across global markets.</p>
+                <a href="quiz.html" class="cta-button">Launch Free Diagnostic Quiz</a>
+            </div>
+        </section>
+
+        <section class="data-showcase-section">
+            <h2>Global Compliance & Market Requirements Matrix</h2>
+            <p class="section-instruction">Explore real-time regulatory protocols across critical trade blocks. Click any card to access specialized diagnostic deep-dives.</p>
+            
+            <div class="compliance-grid-container" id="complianceGrid">
+                <div class="loading-placeholder">Initializing compliance data engine...</div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Request a Structured Advisory Briefing</h2>
+            <p>Submit your baseline company profile metrics to generate a personalized framework analysis on our form processing engine.</p>
+            
+            <form action="review.html" method="GET" class="gtc-audit-form" id="advisoryForm">
+                <div class="form-group">
+                    <label for="companyName">Registered Corporate Name *</label>
+                    <input type="text" id="companyName" name="company_name" required placeholder="e.g., Global Logistics S.A.">
+                </div>
+
+                <div class="form-group">
+                    <label for="targetMarket">Primary Target Export Region *</label>
+                    <select id="targetMarket" name="target_market" required>
+                        <option value="">-- Select Target Jurisdiction --</option>
+                        <option value="European Union">European Union (EU Access2Markets)</option>
+                        <option value="North America">North America (USMCA Block)</option>
+                        <option value="Asia-Pacific">Asia-Pacific Compliance Area</option>
+                        <option value="Sub-Saharan Africa">Central/Sub-Saharan African Trade Networks</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Operational Staffing Level</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="firm_scale" value="Micro-Enterprise (1-9 staff)" checked> Micro-Enterprise (1-9 staff)</label>
+                        <label><input type="radio" name="firm_scale" value="Small Business (10-49 staff)"> Small Business (10-49 staff)</label>
+                        <label><input type="radio" name="firm_scale" value="Medium Enterprise (50-249 staff)"> Medium Enterprise (50-249 staff)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="complianceFocus">Primary Risk Mitigation Objective</label>
+                    <select id="complianceFocus" name="compliance_focus">
+                        <option value="HTS Tariff Precision">HTS Tariff Classification Accuracy</option>
+                        <option value="Rules of Origin">Rules of Origin (RoO) Certification</option>
+                        <option value="AML Protocols">Cross-Border AML/CFT Security Verification</option>
+                        <option value="Logistics Audit">Logistics & Supply Chain Audit Preparation</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-button">Generate Audit Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="detailModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-window">
+            <header class="modal-header">
+                <h3 id="modalTitle">Compliance Vector Diagnostics</h3>
+                <button id="closeModalBtn" aria-label="Close modal window">&times;</button>
+            </header>
+            <div class="modal-body" id="modalBodyContent">
+                </div>
+            <footer class="modal-footer">
+                <button type="button" class="modal-action-btn" id="modalAcknowledge">Acknowledge Framework Matrix</button>
+            </footer>
         </div>
-      </div>
-
-      <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav id="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <div class="flag-stripe" aria-hidden="true">
-    <div></div><div></div><div></div>
-  </div>
-
-  <section class="hero" aria-label="Hero banner">
-    <picture>
-      <source
-        media="(min-width: 700px)"
-        srcset="images/hero-luxembourg-wide.webp"
-        type="image/webp">
-      <img
-        src="images/hero-luxembourg-mobile.webp"
-        srcset="images/hero-luxembourg-mobile.webp 600w,
-                images/hero-luxembourg-wide.webp 1100w"
-        sizes="100vw"
-        alt="Panoramic view of Luxembourg City"
-        width="1100"
-        height="500"
-        loading="eager">
-    </picture>
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <p class="hero-eyebrow">Grand Duchy of Luxembourg</p>
-        <h1>Where Business Meets the Heart of Europe</h1>
-        <p>
-          The Luxembourg Chamber of Commerce connects, supports, and advocates
-          for the Grand Duchy's thriving business community — from startups
-          to global enterprises.
-        </p>
-        <div>
-          <a href="join.html" class="btn-cta">Join the Chamber</a>
-          <a href="directory.html" class="btn-secondary">Member Directory</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <div class="main-grid">
-
-      <section class="weather-card" aria-labelledby="weather-heading">
-        <h2 class="section-title" id="weather-heading">🌤 Live Weather</h2>
-        <div id="weather-content">
-          <div class="loading-placeholder" role="status" aria-label="Loading weather data">
-            Loading weather…
-          </div>
-        </div>
-      </section>
-
-      <section class="events-card" aria-labelledby="events-heading">
-        <h2 class="section-title" id="events-heading">Current Events</h2>
-
-        <article class="event-item">
-          <div class="event-date-badge" aria-label="June 10">
-            <span class="month">Jun</span>
-            <span class="day">10</span>
-          </div>
-          <div class="event-info">
-            <h3>Annual Business Forum 2025</h3>
-            <p>Join leading executives and policymakers at the Kirchberg Conference Centre. Networking lunch included. Register by June 1st.</p>
-          </div>
-        </article>
-
-        <article class="event-item">
-          <div class="event-date-badge" aria-label="June 18">
-            <span class="month">Jun</span>
-            <span class="day">18</span>
-          </div>
-          <div class="event-info">
-            <h3>Finance &amp; Fintech Summit</h3>
-            <p>Explore Luxembourg's role as Europe's leading financial hub. Speakers from ECB, Clearstream, and local startups.</p>
-          </div>
-        </article>
-
-        <article class="event-item">
-          <div class="event-date-badge" aria-label="July 2">
-            <span class="month">Jul</span>
-            <span class="day">2</span>
-          </div>
-          <div class="event-info">
-            <h3>SME Networking Night</h3>
-            <p>An informal evening for small and medium enterprises to connect, share ideas, and explore partnership opportunities.</p>
-          </div>
-        </article>
-
-        <article class="event-item">
-          <div class="event-date-badge" aria-label="July 15">
-            <span class="month">Jul</span>
-            <span class="day">15</span>
-          </div>
-          <div class="event-info">
-            <h3>Green Economy Workshop</h3>
-            <p>Practical sessions on sustainability reporting, EU taxonomy, and transitioning to carbon-neutral operations.</p>
-          </div>
-        </article>
-
-      </section>
-
-      <section class="spotlights-section" aria-labelledby="spotlights-heading">
-        <h2 class="section-title" id="spotlights-heading">Member Spotlights</h2>
-        <p style="font-size:0.85rem;color:var(--clr-muted);margin-bottom:0.75rem;">
-          Highlighting our Gold &amp; Silver members — refreshed on every visit.
-        </p>
-        <div id="spotlight-grid" class="spotlight-grid">
-          <div style="color:var(--clr-muted);font-size:0.88rem;">Loading spotlights…</div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-        <div class="site-brand">
-          <div class="brand-flag" aria-hidden="true" style="width:22px;height:16px;">
-            <span></span><span></span><span></span>
-          </div>
-          <span class="brand-name">Luxembourg CoC</span>
-        </div>
-        <p>
-          7 Rue Alcide de Gasperi<br>
-          L-2981 Luxembourg City<br>
-          +352 42 39 39 1<br>
-          <a href="mailto:info@cc.lu" style="color:rgba(255,255,255,0.5);">info@cc.lu</a>
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-links">
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="https://www.gouvernement.lu/en.html" target="_blank" rel="noopener">Government</a></li>
-          <li><a href="https://www.visitluxembourg.com" target="_blank" rel="noopener">Visit Luxembourg</a></li>
-          <li><a href="https://www.eurostat.ec.europa.eu" target="_blank" rel="noopener">Eurostat</a></li>
-        </ul>
-      </div>
-
     </div>
 
-    <div class="footer-bottom">
-      <p>
-        &copy; <span id="currentyear"></span> Luxembourg Chamber of Commerce &nbsp;|&nbsp;
-        Francisca Maxinho &nbsp;|&nbsp; WDD 231
-      </p>
-      <p id="lastModified"></p>
-    </div>
-  </footer>
-
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Global Trade Center (GTC) Portal. All Rights Reserved.</p>
+            <p class="author-attribution">Developed by: Francisca Maxinho | Senior Trade Advisory Consultant</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" class="footer-link">Resource Attributions</a> | 
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>

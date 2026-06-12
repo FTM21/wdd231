@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Intelligence Modules | GTC Resources</title>
+    <meta name="description" content="Access specialized EU Access2Markets framework tracking databases and International Trade Centre training modules designed to upscale enterprise compliance.">
+    <meta name="author" content="Francisca Maxinho">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/site-plan.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-block">
+                <span class="logo-text">Global Trade Center <span class="logo-accent">(GTC)</span></span>
+            </div>
+            <button id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav id="primaryNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="resources.html" class="nav-link active" aria-current="page">Resources</a></li>
+                    <li><a href="quiz.html" class="nav-link">Readiness Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="resource-intro">
+            <h1>Integrated Trade Intelligence Modules</h1>
+            <p>Leverage foundational market-entry portals and regulatory tracking frameworks optimized for small and medium businesses.</p>
+        </section>
+
+        <section class="integration-modules-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+            <div class="module-card" style="background: #ffffff; border: 1px solid var(--border-color); padding: 25px; border-radius: 6px;">
+                <h2 style="color: var(--secondary-color);">EU Access2Markets Toolset</h2>
+                <p>Navigate import/export product regulations, tariff lines, rules of origin, taxes, and trade statistics specific to EU member states seamlessly.</p>
+                <button type="button" class="view-details-btn launch-module-btn" data-module="access2markets">Launch Access2Markets Wizard</button>
+            </div>
+
+            <div class="module-card" style="background: #ffffff; border: 1px solid var(--border-color); padding: 25px; border-radius: 6px;">
+                <h2 style="color: var(--secondary-color);">ITC Training Academy</h2>
+                <p>Access international market analysis tools, technical barriers to trade (TBT) logs, and instructional design modules directly derived from International Trade Centre data.</p>
+                <button type="button" class="view-details-btn launch-module-btn" data-module="itc">Explore ITC Learning Assets</button>
+            </div>
+        </section>
+
+        <section class="dynamic-database-section">
+            <h2>Live Regional Tariff & Compliance Matrix</h2>
+            <p>The following parameters are compiled dynamically from your centralized compliance engine using native ES Modules.</p>
+            
+            <div class="compliance-grid-container" id="resourcesGrid">
+                <div class="loading-placeholder">Asynchronously updating global trade vectors...</div>
+            </div>
+        </section>
+    </main>
+
+    <div id="detailModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-window">
+            <header class="modal-header">
+                <h3 id="modalTitle">Compliance Vector Diagnostics</h3>
+                <button id="closeModalBtn" aria-label="Close modal window">&times;</button>
+            </header>
+            <div class="modal-body" id="modalBodyContent">
+                </div>
+            <footer class="modal-footer">
+                <button type="button" class="modal-action-btn" id="modalAcknowledge">Acknowledge Framework Matrix</button>
+            </footer>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Global Trade Center (GTC) Portal. All Rights Reserved.</p>
+            <p class="author-attribution">Developed by: Francisca Maxinho | Senior Trade Advisory Consultant</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" class="footer-link">Resource Attributions</a> | 
+                <a href="https://youtu.be/example-link" target="_blank" class="footer-link video-link">Project Video Demonstration</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

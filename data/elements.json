@@ -1,0 +1,107 @@
+[
+    {
+      "id": "EU-ROO",
+      "market": "European Union",
+      "category": "Rules of Origin",
+      "requirement": "Wholly Obtained rule or Sufficient Transformation verification clause.",
+      "severity": "Critical Compliance"
+    },
+    {
+      "id": "US-HTS",
+      "market": "United States",
+      "category": "Tariff Classification",
+      "requirement": "10-digit HTS Code precision alignment to eliminate customs hold penalties.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "SG-AML",
+      "market": "Singapore",
+      "category": "Financial Compliance",
+      "requirement": "Cross-Border Anti-Money Laundering (AML/CFT) verification protocols.",
+      "severity": "High Priority"
+    },
+    {
+      "id": "AO-EXP",
+      "market": "Angola / SADC Block",
+      "category": "Export Documentation",
+      "requirement": "DU (Documento Único) processing validation guidelines via ASYCUDA.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "LUX-SPS",
+      "market": "Luxembourg / EU",
+      "category": "Sanitary & Phytosanitary",
+      "requirement": "Strict compliance validation mapping via TRACES NT system reporting.",
+      "severity": "Critical Compliance"
+    },
+    {
+      "id": "DE-EUD",
+      "market": "Germany",
+      "category": "Supply Chain Due Diligence",
+      "requirement": "LkSG supply chain human rights and environmental audit proof standards.",
+      "severity": "High Priority"
+    },
+    {
+      "id": "UK-CBAM",
+      "market": "United Kingdom",
+      "category": "Environmental Tariffs",
+      "requirement": "Carbon Border Adjustment Mechanism greenhouse emission accounting logs.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "CA-CAR",
+      "market": "Canada",
+      "category": "Customs Assessment",
+      "requirement": "CARM (CBSA Assessment and Revenue Management) portal electronic logging.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "JP-VPC",
+      "market": "Japan",
+      "category": "Value Declaration",
+      "requirement": "Advanced transfer pricing and transactional value calculation verification.",
+      "severity": "High Priority"
+    },
+    {
+      "id": "AU-BIO",
+      "market": "Australia",
+      "category": "Biosecurity Controls",
+      "requirement": "BICON import permit clearing declarations for organic materials.",
+      "severity": "Critical Compliance"
+    },
+    {
+      "id": "BR-SIS",
+      "market": "Brazil",
+      "category": "Import Licensing",
+      "requirement": "Siscomex integrated foreign trade terminal routing registrations.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "CH-FTD",
+      "market": "Switzerland",
+      "category": "Free Trade Agreements",
+      "requirement": "EUR.1 movement certificate documentation for preferential tariff rates.",
+      "severity": "High Priority"
+    },
+    {
+      "id": "ZA-SAC",
+      "market": "South Africa",
+      "category": "Customs Unions",
+      "requirement": "SACU regional value content tracking declarations for manufacturing.",
+      "severity": "Mandatory"
+    },
+    {
+      "id": "AE-MOF",
+      "market": "United Arab Emirates",
+      "category": "Economic Substance",
+      "requirement": "ESR (Economic Substance Regulations) compliance framework verification.",
+      "severity": "High Priority"
+    },
+    {
+      "id": "IN-ICE",
+      "market": "India",
+      "category": "Digital Customs",
+      "requirement": "ICEGATE single window interface electronic bill of entry matching.",
+      "severity": "Mandatory"
+    }
+  ]
