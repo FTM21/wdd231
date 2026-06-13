@@ -1,59 +1,61 @@
-import { places } from '../data/discover.mjs';
+import { locations } from '../data/discover.mjs';
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayVisitMessage();
-  renderDiscoverCards();
+    renderVisitorMessage();
+    renderDiscoverCards();
 });
 
-// ── LOCAL STORAGE VISITOR MESSAGE ──
-function displayVisitMessage() {
-  const messageEl = document.getElementById("visit-message");
-  if (!messageEl) return;
+function renderVisitorMessage() {
+    const messageElement = document.querySelector(".visit-message");
+    if (!messageElement) return;
 
-  const lastVisit = localStorage.getItem("lastVisitDate");
-  const now = Date.now();
-  
-  // Store the current timestamp for the user's next load
-  localStorage.setItem("lastVisitDate", now);
+    const lastVisit = localStorage.getItem("lastChamberVisit");
+    const currentTimestamp = Date.now();
 
-  if (!lastVisit) {
-    messageEl.textContent = "Welcome! Let us know if you have any questions.";
-    return;
-  }
+    localStorage.setItem("lastChamberVisit", currentTimestamp);
 
-  // Calculate difference in milliseconds and convert to whole days
-  const timeDiff = now - parseInt(lastVisit, 10);
-  const oneDayInMs = 24 * 60 * 60 * 1000;
-  const daysBetween = Math.floor(timeDiff / oneDayInMs);
-
-  if (timeDiff < oneDayInMs) {
-    messageEl.textContent = "Back so soon! Awesome!";
-  } else {
-    if (daysBetween === 1) {
-      messageEl.textContent = "You last visited 1 day ago.";
-    } else {
-      messageEl.textContent = `You last visited ${daysBetween} days ago.`;
+    if (!lastVisit) {
+        messageElement.textContent = "Welcome! Let us know if you have any questions.";
+        return;
     }
-  }
+
+    const timeDifference = currentTimestamp - parseInt(lastVisit, 10);
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const daysBetween = Math.floor(timeDifference / msPerDay);
+
+    if (timeDifference < msPerDay) {
+        messageElement.textContent = "Back so soon! Awesome!";
+    } else {
+        const dayWord = daysBetween === 1 ? "day" : "days";
+        messageElement.textContent = `You last visited ${daysBetween} ${dayWord} ago.`;
+    }
 }
 
-// ── RENDER DISCOVER CARDS ──
 function renderDiscoverCards() {
-  const gridContainer = document.getElementById("discover-grid");
-  if (!gridContainer) return;
+    const gridContainer = document.querySelector(".discover-grid");
+    if (!gridContainer) return;
 
-  gridContainer.innerHTML = places.map((place, index) => {
-    // Dynamically naming card areas card1, card2, etc. to link to CSS grid areas
-    return `
-      <article class="discover-card" style="grid-area: card${index + 1};">
-        <h2>${place.name}</h2>
-        <figure>
-          <img src="${place.image}" alt="Beautiful scenic view of ${place.name}" loading="lazy" width="300" height="200">
-        </figure>
-        <address>📍 ${place.address}</address>
-        <p>${place.description}</p>
-        <button type="button" class="learn-more-btn">Learn More</button>
-      </article>
-    `;
-  }).join('');
+    gridContainer.innerHTML = ""; // Clear placeholder text if any
+
+    locations.forEach(place => {
+        const card = document.createElement("section");
+        card.className = "discover-card";
+        
+        card.style.gridArea = place.id; 
+
+        card.innerHTML = `
+            <h2>${place.title}</h2>
+            <figure>
+                <img src="${place.image}" 
+                     alt="Scenic view of ${place.title}" 
+                     loading="lazy" 
+                     width="300" 
+                     height="200">
+            </figure>
+            <address>${place.address}</address>
+            <p>${place.description}</p>
+            <button class="learn-more-btn" type="button">Learn More</button>
+        `;
+        gridContainer.appendChild(card);
+    });
 }
